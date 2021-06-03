@@ -1,0 +1,44 @@
+{
+    "fullListe": [
+        {
+            "id": "0",
+            "title": "My Hero Academia",
+            "author": "Kōhei Horikoshi",
+            "sumarry" : "Dans un monde où 80 % de la population mondiale possède des super-pouvoirs, ici nommés « Alters » , n'importe qui peut devenir un héros ou, s'il le souhaite, un criminel. Le manga suit les aventures de Izuku Midoriya « Deku », l'un des rares humains ne possédant pas d'Alter, qui rêve pourtant de rejoindre la filière super-héroïque de la grande académie Yuei et de devenir un jour un des plus grands héros de son époque, à l'image de son héros, All Might. Un jour, il a la chance de rencontrer son idole et celui-ci va lui donner une chose dont il ne croyait jamais pouvoir bénéficier.",
+            "nbTomes" : 28,
+            "ilustration": "https://image.animedigitalnetwork.fr/license/mha/tv/web/affiche_600x856.jpg"
+        },
+        {
+            "id": "1",
+            "title": "Naruto",
+            "author": "Masashi Kishimoto",
+            "sumarry" : "Naruto Uzumaki est un jeune adolescent orphelin et turbulent. Il passe son temps à essayer de se faire remarquer en inventant des idioties toujours plus farfelues. Loin d’être un élève brillant en cours ninja, cela ne l’empêche pas de clamer haut et fort qu’il sera hokage (un chef du village) du village de Konoha.",
+            "nbTomes" : 50,
+            "ilustration": "https://www.betanews.fr/wp-content/uploads/2020/08/Date-de-sortie-prevue-de-la-serie-Naruto-distribution-intrigue.jpg"
+        },
+        {
+            "id": "2",
+            "title": "My Hero Academia",
+            "author": "Kōhei Horikoshi",
+            "sumarry" : "Dans un monde où 80 % de la population mondiale possède des super-pouvoirs, ici nommés « Alters » , n'importe qui peut devenir un héros ou, s'il le souhaite, un criminel. Le manga suit les aventures de Izuku Midoriya « Deku », l'un des rares humains ne possédant pas d'Alter, qui rêve pourtant de rejoindre la filière super-héroïque de la grande académie Yuei et de devenir un jour un des plus grands héros de son époque, à l'image de son héros, All Might. Un jour, il a la chance de rencontrer son idole et celui-ci va lui donner une chose dont il ne croyait jamais pouvoir bénéficier.",
+            "nbTomes" : 28,
+            "ilustration": "https://image.animedigitalnetwork.fr/license/mha/tv/web/affiche_600x856.jpg"
+        },
+        {
+            "id": "3",
+            "title": "Naruto",
+            "author": "Masashi Kishimoto",
+            "sumarry" : "Naruto Uzumaki est un jeune adolescent orphelin et turbulent. Il passe son temps à essayer de se faire remarquer en inventant des idioties toujours plus farfelues. Loin d’être un élève brillant en cours ninja, cela ne l’empêche pas de clamer haut et fort qu’il sera hokage (un chef du village) du village de Konoha.",
+            "nbTomes" : 50,
+            "ilustration": "https://www.betanews.fr/wp-content/uploads/2020/08/Date-de-sortie-prevue-de-la-serie-Naruto-distribution-intrigue.jpg"
+        },
+        {
+            "id": "4",
+            "title": "My Hero Academia",
+            "author": "Kōhei Horikoshi",
+            "sumarry" : "Dans un monde où 80 % de la population mondiale possède des super-pouvoirs, ici nommés « Alters » , n'importe qui peut devenir un héros ou, s'il le souhaite, un criminel. Le manga suit les aventures de Izuku Midoriya « Deku », l'un des rares humains ne possédant pas d'Alter, qui rêve pourtant de rejoindre la filière super-héroïque de la grande académie Yuei et de devenir un jour un des plus grands héros de son époque, à l'image de son héros, All Might. Un jour, il a la chance de rencontrer son idole et celui-ci va lui donner une chose dont il ne croyait jamais pouvoir bénéficier.",
+            "nbTomes" : 28,
+            "ilustration": "https://image.animedigitalnetwork.fr/license/mha/tv/web/affiche_600x856.jpg"
+        }
+    ]
+}

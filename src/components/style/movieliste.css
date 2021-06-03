@@ -1,0 +1,44 @@
+.movvieListePage , .moviesPlayliste{
+    background-color: #532255;
+}
+
+
+
+.titlePage {
+    width: 100vw;
+    text-align: center;
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
+    text-shadow: 2px 2px 3px black;
+}
+.seachSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    margin-top: 1rem;
+}
+.searchBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.searchBar input {
+    margin-bottom: 1rem;
+    width: 70%;
+}
+
+
+
+
+.movieListe, .playlisteListe {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
