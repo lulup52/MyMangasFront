@@ -2,8 +2,8 @@ import Axios from 'axios';
 import datasImport from '../temporaryDB/dbTest.json';
 import NavBar from './NavBar';
 import React, { useState, useEffect } from 'react';
-import './style/movieliste.css';
 import './style/basicsElements.css';
+import './style/fullListe.css';
 
 import {
   Link,
@@ -12,6 +12,7 @@ import {
 import AjoutFilm from './AjoutFilm'
 import ModaleSerie from './ModaleSerie'
 import ModaleAddSerie from './ModaleAddSerie'
+import Button from './designComponent/Button';
 
 
 
@@ -75,16 +76,16 @@ export default function FullListe() {
     <>
       <div className="pageContainer">
         <div className='titreButton'>
-          <h2>Liste</h2>
-          <div className='addButton buttonListe' onClick={() => manageModaleAdd()}><p>+</p></div>
+          <h2 className='titrePage'>Liste</h2>
+          {/* <div className='addButton buttonListe' onClick={() => manageModaleAdd()}><p>+</p></div> */}
+          <Button adress={'function'} content={"+"} defaultClasse={"addButton "} classeClicked={"addButtonClicked"} onclickFunction={manageModaleAdd}/>
         </div>
-        <div>bonjours de la liste complète</div>
         <div className='mangaListeContainer'>
           {datas.fullListe.map(e => console.log(e))}
           {
             datas.fullListe.map(manga => 
               <div className='blockManga' onClick={e => manageModaleData(manga)}>
-                <div>{manga.title}</div>
+                <div className='titleBLockMangas'>{manga.title}</div>
                 <div>{manga.nbTomes}</div>
                 <div className='imgContainer'>
                   <img src={manga.ilustration} />

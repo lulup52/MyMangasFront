@@ -4,50 +4,51 @@ import {
     Link,
     useHistory, 
   } from 'react-router-dom';
+import '../style/basicsElements.css';
+import '../style/fullListe.css';
 
-export default function Home({adress, content}) {
+export default function Home({adress, content, defaultClasse ,classeClicked, onclickFunction}) {
     let history = useHistory();
 
 /* ------------ gestion de l'annimation du bouton */
 
     const pressedButton = (e) => {
       e.preventDefault()
-
+      
       /*bouton cliké*/
-      e.target.classList = "clickableButtonPressed"
-
+      e.target.classList.add(`${classeClicked}`)
       setTimeout(function() {
-
         /* le bouton remonte*/
-        e.target.classList = "clickableButton"
-
+        e.target.classList.remove(`${classeClicked}`)
         setTimeout(function() {
-          /* redirection*/
-          history.push(`/${adress}`)
+          /* choix de la fonction*/
+          switch (adress) {
+            case 'back' : 
+              history.goBack();
+            break;
+
+            case 'function' : 
+              onclickFunction()
+              break;
+
+            default :
+              history.push(`/${adress}`);
+              break;
+            
+          }
         }, 300);
-        console.log("hey")
       }, 500);
-      
-      
+
     }
     
-    switch (adress) {
-      case 'home':return (
+  return (
         <div className='buttonHeightHolder'>
-          <Link className="clickableButton" to={`/${adress}`} id={`${adress}`} onClick={() => history.goBack()}>
+          <Link className={defaultClasse} to={`/${adress}`} id={`${adress}`} onClick={(e) => pressedButton(e)}>
               {content}
           </Link>
         </div>
       )
-      
-      default : return (
-        <div className='buttonHeightHolder'>
-          <Link className="clickableButton" to={`/${adress}`} id={`${adress}`} onClick={(e) => pressedButton(e)}>
-              {content}
-          </Link>
-        </div>
-      )
-    }
+    
   
 }
 

@@ -1,0 +1,23 @@
+.titreButton {
+    height: 10vh;
+
+}
+.blockManga .imgContainer {
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+    width: 10vh;
+}
+
+.blockManga .imgContainer img {
+    height: 100%;
+    width: auto;
+}
+
+.titleBLockMangas {
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

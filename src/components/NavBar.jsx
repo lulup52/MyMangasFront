@@ -9,7 +9,7 @@ export default function NavBar() {
 
     return (
     <div className='navBar'>
-        <Button adress={'home'} content={null}/>
+        <Button adress={'back'} content={"<"} defaultClasse={"backButton "} classeClicked={"backButtonPressed"} />
     </div>
   );
 }
