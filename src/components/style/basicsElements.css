@@ -25,7 +25,7 @@ a {
     height: 95vh;
 }
 
-.mangaListeContainer {
+.mangaListeContainer, .mangaCollectionContainer {
     display: flex;
     overflow-y: scroll;
     flex-wrap: wrap;

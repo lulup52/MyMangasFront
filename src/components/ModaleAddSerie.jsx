@@ -16,20 +16,21 @@ export default function ModaleSerie({manageModaleAdd}) {
       <Button adress={'function'} content={"x"} defaultClasse={"exitButton"} classeClicked={"exitButtonClicked"} onclickFunction={manageModaleAdd} />
       
       <form action="">
-        <label for="titreSerie">titre de la série</label>
-        <input type="text" id="titreSerie" name="titreSerie"></input>
+        <label for="titreSerie"></label>
+        <input placeholder="titre de la série" type="text" id="titreSerie" name="titreSerie"></input>
         <br/>
-        <label for="AuthorSerie">Qui est l'auteur</label>
-        <input type="text" id="AuthorSerie" name="AuthorSerie"></input>
+        <label for="AuthorSerie"></label>
+        <input placeholder="Qui est l'auteur" type="text" id="AuthorSerie" name="AuthorSerie"></input>
         <br/>
-        <label for="numberBookSerie">Combien de tome</label>
-        <input type="text" id="numberBookSerie" name="numberBookSerie"></input>
+        <label for="numberBookSerie"></label>
+        <input placeholder="Combien de tome" type="text" id="numberBookSerie" name="numberBookSerie"></input>
         <br/>
-        <label for="sumarry">Résumé de la série</label>
-        <input type="text" id="sumarry" name="sumarry"></input>
+        <label for="sumarry"></label>
+        <textarea placeholder="Résumé de la série" id="sumarry" name="sumarry" rows="5" cols="33"></textarea>
         <br/>
-        <label for="ilustration">adresse de l'ilustration</label>
-        <input type="text" id="ilustration" name="ilustration"></input>
+        <label for="ilustration"></label>
+        <input placeholder="adresse de l'ilustration" type="text" id="ilustration" name="ilustration"></input>
+        <br/>
         <input type="submit" value="Envoyer le formulaire"/>
 
       </form>

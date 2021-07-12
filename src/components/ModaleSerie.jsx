@@ -19,7 +19,7 @@ export default function ModaleSerie({modaleData}) {
       </div>
       <div className='modaleAuthor'>{modaleData.author}</div>
       <div className='modaleSerieDescribe'>
-        <p>{modaleData.sumarry}</p>
+        <p>{modaleData.sumary}</p>
       </div>
 
     </div>

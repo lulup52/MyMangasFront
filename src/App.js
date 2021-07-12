@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import './App.css';
 
-import Playliste from './components/MoviesPlayliste'
+import Collection from './components/Collection'
 import FullListe from './components/FullListe'
 import MoviesList from './components/MoviesList'
 import Home from './components/Home'
@@ -22,8 +22,8 @@ function App() {
         <Route path="/full_liste">
           <FullListe />
         </Route>
-        <Route path="/playliste">
-          <Playliste />
+        <Route path="/collection">
+          <Collection />
         </Route>
         <Route path="/movies">
           <MoviesList />

@@ -1,5 +1,5 @@
 {
-    "fullListe": [
+    "liste_all_serie": [
         {
             "id": "0",
             "title": "My Hero Academia",
@@ -40,5 +40,28 @@
             "nbTomes" : 28,
             "ilustration": "https://image.animedigitalnetwork.fr/license/mha/tv/web/affiche_600x856.jpg"
         }
-    ]
+    ],
+    "liste_serie_colection": [
+        {
+          "user_id": 1,
+          "title": "Naruto",
+          "subtitle": "le petit ninja",
+          "num_tome": 1,
+          "ilustration": "https://m.media-amazon.com/images/I/61oZGoXJo1L.jpg"
+        },
+        {
+          "user_id": 1,
+          "title": "Naruto",
+          "subtitle": "on rencontre les copain",
+          "num_tome": 2,
+          "ilustration": "https://images-na.ssl-images-amazon.com/images/I/91FxLoh8EuL.jpg"
+        },
+        {
+          "user_id": 1,
+          "title": "Naruto",
+          "subtitle": "premier chalenge",
+          "num_tome": 3,
+          "ilustration": "https://images-na.ssl-images-amazon.com/images/I/711QaUsMZfL.jpg"
+        }
+      ]
 }
