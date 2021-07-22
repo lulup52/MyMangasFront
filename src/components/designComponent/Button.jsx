@@ -36,16 +36,19 @@ export default function Home({adress, content, defaultClasse ,classeClicked, onc
               break;
             
           }
-        }, 300);
-      }, 500);
+        }, 100);
+      }, 200);
 
     }
     
   return (
         <div className='buttonHeightHolder'>
+          <div>
           <Link className={defaultClasse} to={`/${adress}`} id={`${adress}`} onClick={(e) => pressedButton(e)}>
               {content}
           </Link>
+          </div>
+          
         </div>
       )
     

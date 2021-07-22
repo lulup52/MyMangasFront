@@ -51,7 +51,6 @@ export default function FullListe() {
           */}
         </div>
         <div className='mangaListeContainer'>
-          {allSeries.map(e => console.log(e))}
           {
             allSeries.map(manga => 
               <div className='blockManga' onClick={e => manageModaleData(manga)}>

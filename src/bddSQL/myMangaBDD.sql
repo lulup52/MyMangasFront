@@ -19,6 +19,7 @@ CREATE TABLE `serie`
     `author` VARCHAR(150),
     `sumary` VARCHAR(750)
 )engine=innodb;
+
 CREATE TABLE `tome`
 (
     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -27,7 +28,8 @@ CREATE TABLE `tome`
     CONSTRAINT fk_tome_serie FOREIGN KEY (serie_id) REFERENCES serie (id),
     `ilustration` VARCHAR(500),
     `subtitle` VARCHAR(100) ,
-    `num_tome` INT
+    `num_tome` INT,
+    `tome_sumary` VARCHAR(750)
 )engine=innodb;
 
 
@@ -81,67 +83,71 @@ VALUES
 ;
 
 
-INSERT INTO tome (serie_id, serie_title, ilustration, subtitle, num_tome )
+INSERT INTO tome (serie_id, serie_title, ilustration, subtitle, num_tome, tome_sumary )
 VALUES
+
 (1, 
 "Naruto",
 "https://m.media-amazon.com/images/I/61oZGoXJo1L.jpg",
 "le petit ninja",
-1
-),
-(1, 
-"Naruto",
-"https://m.media-amazon.com/images/I/61oZGoXJo1L.jpg",
-"le petit ninja",
-1
+1,
+"Naruto galere a l'ecole et il lui arrive de petite peripeties."
 ),
 (1, 
 "Naruto",
 "https://images-na.ssl-images-amazon.com/images/I/91FxLoh8EuL.jpg",
 "on rencontre les copain",
-2
+2,
+"Naruto galere galere toujours et vit toujours plus de peripeties mais se fait de nouveaux amis."
 ),
 (1, 
 "Naruto",
 "https://images-na.ssl-images-amazon.com/images/I/711QaUsMZfL.jpg",
 "premier chalenge",
-3
+3,
+"Les premieres epruves commence et naruto et ses amis vont avoir du mal a les passer"
 ),
 (2, 
 "boruto",
 "https://images-na.ssl-images-amazon.com/images/I/91F2tqPYZ3L.jpg",
 "debut des aventures",
-1
+1,
+"Boruto galere a l'ecole et il lui arrive de petite peripeties."
 ),
 (2, 
 "boruto",
 "https://images-na.ssl-images-amazon.com/images/I/71iHBQnLrVL.jpg",
 "la suite des aventures",
-2
+2,
+"Boruto galere galere toujours et vit toujours plus de peripeties mais se fait de nouveaux amis."
 ),
 (2, 
 "boruto",
 "https://static.fnac-static.com/multimedia/Images/FR/NR/71/f6/88/8975985/1507-1/tsp20210301161441/Boruto-Naruto-next-generations-Tome-3.jpg",
 "la fin des aventures",
-3
+3,
+"Les professeurs comprenent que boruto est doue et l'accompagne dans son entrainement"
 ),
 (3, 
 "My Hero Academia",
 "https://images-na.ssl-images-amazon.com/images/I/71qTqgt7LvL.jpg",
 "Izuku Midoria : les origines",
-1
+1,
+"Izuku n'apas de pouvoir et recontre all-might qui lui en donne"
 ),
 (3, 
 "My Hero Academia",
 "https://images-na.ssl-images-amazon.com/images/I/71ZzczktUgL.jpg",
 "Dechaine toi maudit nerds",
-2
+2,
+"Izuku passe les examens d'entree pour les admissions de yuei "
 ),
 (3, 
 "My Hero Academia",
 "https://static.fnac-static.com/multimedia/Images/FR/NR/29/30/78/7876649/1540-1/tsp20170322154946/My-Hero-Academia.jpg",
 "All Might",
-3
+3,
+"l'entrainement de Izuku debute et c'est All Might qui va s'en charger"
 )
 ;
 

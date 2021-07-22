@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import './style/basicsElements.css';
-import './style/allListe.css';
+import './style/collectionListe.css';
 import {
   Link,
 } from 'react-router-dom';

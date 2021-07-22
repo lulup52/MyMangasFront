@@ -1,3 +1,7 @@
+.selectTest {
+    position: absolute;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -60,7 +64,6 @@ h2 {
 .buttonHeightHolder {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     height: 10vh;
 }
 .clickableButton {
@@ -126,6 +129,9 @@ h2 {
     border: solid 1px black;
 }
 
+.rotate p{
+    transform: rotate(45deg);
+}
 
 
 .addButton  {
@@ -184,7 +190,7 @@ h2 {
 
 /*---------------- block et listes ----------------*/
 
-.blockManga, .blockPlayliste {
+.blockManga, .blockPlayliste{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -209,6 +215,7 @@ h2 {
 .titleBLockMangas {
 
 }
+
 
 
 .navBarContainer {
