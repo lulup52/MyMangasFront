@@ -28,7 +28,6 @@ export default function FullListe() {
   const [modaleAddOn, setModaleAddOn] = useState(false);  
 
   const [modaleData, setModaleData] = useState({});  
-  console.log(allSeries)
 
     const manageModaleData = (manga) => {
       setModaleDataOn(!modaleDataOn)
@@ -41,52 +40,42 @@ export default function FullListe() {
 
     // }
     return (
-    <>
-      <div className="pageContainer">
-        <div className='titreButton'>
-          <h2 className='titrePage'>Liste</h2>
-          {/*
-          --------------bouton d'ajout d'une série
-          <Button adress={'function'} content={"+"} defaultClasse={"addButton "} classeClicked={"addButtonClicked"} onclickFunction={manageModaleAdd}/> 
-          */}
-        </div>
-        <div className='mangaListeContainer'>
+      <>
+        <div className="pageContainer">
+          <div className='titreButton'>
+            <h2 className='titrePage'>Yout liste </h2>
+           
+          </div>
+          <div className='mangaCollectionContainer'>
           {
-            allSeries.map(manga => 
-              <div className='blockManga' onClick={e => manageModaleData(manga)}>
-                <div className='titleBLockMangas'>{manga.title}</div>
-                <div>{manga.nbr_of_tome}</div>
+            allSeries.map(serie => 
+              <div className='blockManga' onClick={e => manageModaleData(serie)}>
+  
+                <div className='titleBLockMangas'>{serie.title}</div>
                 <div className='imgContainer'>
-                  <img src={manga.ilustration} />
+                  <img src={serie.ilustration} />
                 </div>
+  
               </div>
-            )
-          }
-          {/*-------------bouton d'ajout
-           <div className='blockManga' onClick={() => manageModaleAdd()}><p>+</p></div> */}
-
+              )
+            }
+          </div>
         </div>
-      </div>
-      <div className='navBarContainer' >
-        <NavBar />
-      </div>
-      
-      {
-        modaleDataOn ? 
-        <div className='modaleContainer' onClick={e => manageModaleData()}>
-          <ModaleSerie modaleData={modaleData}/>
+        <div className='navBarContainer' >
+          <NavBar />
         </div>
-        : ""
-      }
-      {
-        // modaleAddOn ? 
-        // <div className='modaleAddSerieContainer'>
-        //   <ModaleAddSerie manageModaleAdd={manageModaleAdd} />
-        // </div>
-        // : ""
-      }
-      
-    </>
+        
+        {
+          modaleDataOn ? 
+          <div className='modaleContainer' >
+            <ModaleSerie modaleData={modaleData} manageModaleData={manageModaleData}/>
+            {    console.log(modaleData)
+  }
+          </div>
+          : ""
+        }
+        
+      </>
   );
 }
 

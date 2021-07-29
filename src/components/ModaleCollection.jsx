@@ -7,10 +7,12 @@ import './style/modaleSeries.css';
 export default function ModaleCollection({modaleData, userId, manageModaleData}) {
    
   const showDetails = (e, i) => {
-    if ( document.querySelector(`#detailsTome${i}`).style.display !== "flex") {
-      document.querySelector(`#detailsTome${i}`).style.display = "flex"
+    let detailsTome = document.querySelector(`#detailsTome${i}`)
+    if ( detailsTome.style.display !== "flex") {
+ 
+      detailsTome.style.display = "flex"
     } else {
-      document.querySelector(`#detailsTome${i}`).style.display = "none"
+      detailsTome.style.display = "none"
 
     }
   }
@@ -18,10 +20,11 @@ export default function ModaleCollection({modaleData, userId, manageModaleData})
 
   const [userTomesInCollection, setUserTomesInCollection] = useState([])
     useEffect(() => {
-    Axios.get(`http://localhost:8000/api/collections/tome_collection/${userId}/${modaleData.serieId}`)
+    Axios.get(`http://localhost:8000/api/collections/alltomes_collection/${userId}/${modaleData.serieId}`)
     
         .then((response) => {setUserTomesInCollection(response.data) })
     },[])
+
     return (
     <div className='modale'>
       <ButtonPerso adress={'function'} content={"×"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={manageModaleData} />
@@ -44,7 +47,6 @@ export default function ModaleCollection({modaleData, userId, manageModaleData})
               </div>
               <div className="blockTomeDetails" id={`detailsTome${i}`}>
                 <p>{e.tome_sumary}</p>
-                <p>{e.author}</p>
               </div>
             </div>
             )
