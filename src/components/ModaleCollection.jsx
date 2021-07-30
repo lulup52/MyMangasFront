@@ -28,6 +28,7 @@ export default function ModaleCollection({modaleData, userId, manageModaleData})
     return (
     <div className='modale'>
       <ButtonPerso adress={'function'} content={"×"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={manageModaleData} />
+       
        {/* <div className='exitButtonModale'>
         <p>+</p>
       </div> */}

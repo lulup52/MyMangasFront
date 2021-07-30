@@ -6,7 +6,7 @@ import {
   Link,
 } from 'react-router-dom';
 
-import AjoutFilm from './AjoutFilm'
+import CollectionAdd from './collectionAdd'
 export default function MoviesList() {
     const [formOpen, setFormOpen] = useState(false);  
     const [moviesList, setMoviesList] = useState([]);
@@ -56,7 +56,7 @@ export default function MoviesList() {
       </div>
       
       <button onClick={()=> setFormOpen(!formOpen)}>click here</button>
-      {formOpen ? <div className='modale'><AjoutFilm /></div> : ""}
+      {formOpen ? <div className='modale'><CollectionAdd /></div> : ""}
 
       <div className="titlePage">
         Movie Liste

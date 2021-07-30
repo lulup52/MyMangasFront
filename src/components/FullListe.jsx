@@ -9,7 +9,7 @@ import {
   Link,
 } from 'react-router-dom';
 
-import AjoutFilm from './AjoutFilm'
+import collectionAdd from './collectionAdd'
 import ModaleSerie from './ModaleSerie'
 // import ModaleAddSerie from './ModaleAddSerie'
 import Button from './designComponent/Button';
@@ -43,7 +43,7 @@ export default function FullListe() {
       <>
         <div className="pageContainer">
           <div className='titreButton'>
-            <h2 className='titrePage'>Yout liste </h2>
+            <h2 className='titrePage'>All series </h2>
            
           </div>
           <div className='mangaCollectionContainer'>

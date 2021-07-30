@@ -1,8 +1,10 @@
 import Axios from 'axios';
 import React, { useState } from 'react';
+import ButtonPerso from './designComponent/Button';
+import './style/collectionListe.css';
 
 
-export default function MoviesList() {
+export default function CollectionAdd({parentFunction}) {
     //const [moviesList, setMoviesList] = useState([]);
     const [movieForm, setMovieForm] = useState({title:'', director: '', year:'', color: '', duration:'' });
   
@@ -23,7 +25,9 @@ export default function MoviesList() {
     } 
 
     return (
-    <div>
+    <div className='modaleAddCollection'>
+      <ButtonPerso adress={'function'} content={"×"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={parentFunction} />
+
         <div>Ajout d'un nouveau film</div>
         <form onSubmit={handleSubmit}>
             <div className="">

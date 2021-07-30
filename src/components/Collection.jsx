@@ -6,16 +6,18 @@ import {
   Link,
 } from 'react-router-dom';
 import './style/collectionListe.css';
-import ModaleCollection from './ModaleCollection'
 
+import ModaleCollection from './ModaleCollection'
+import ButtonPerso from './designComponent/Button';
+import ModaleCollectionAdd from './collectionAdd'
 
 export default function Collection() {
 // préparer l'axios pour ne récupérer que les séries présentes dans la colection de l'utilisateur
   // recevoir les info de la bdd test -> const colectionListe = tempDatas.liste_serie_colection
     const [userId, setUserId] = useState(1);
     const [allUserCollections, setAllUserCollections] = useState([]);
-
     const [modaleDataOn, setModaleDataOn] = useState(false);  
+    const [modaleAddOn, setModaleAddOn] = useState(false);  
     const [modaleData, setModaleData] = useState({});  
 
     useEffect(() => {
@@ -27,8 +29,12 @@ export default function Collection() {
      const manageModaleData = (colection) => {
       setModaleDataOn(!modaleDataOn)
       setModaleData(colection)
-
     }
+
+    const manageModaleAdd = () => {
+      setModaleAddOn(!modaleAddOn)
+    }
+
     return (
     <>
     <select className='selectTest' onChange={(e)=> setUserId(e.target.value)}>
@@ -39,7 +45,7 @@ export default function Collection() {
       <div className="pageContainer">
         <div className='titreButton'>
           <h2 className='titrePage'>Your collection</h2>
-         
+          <ButtonPerso adress={'function'} content={"+"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={manageModaleAdd} />
         </div>
         <div className='mangaCollectionContainer'>
         {
@@ -64,8 +70,13 @@ export default function Collection() {
         modaleDataOn ? 
         <div className='modaleContainer' >
           <ModaleCollection modaleData={modaleData} userId={userId} manageModaleData={manageModaleData}/>
-          {    console.log(modaleData)
-}
+        </div>
+        : ""
+      }
+      {
+        modaleAddOn ? 
+        <div className='modaleContainer' >
+          <ModaleCollectionAdd parentFunction={manageModaleAdd}/>
         </div>
         : ""
       }
