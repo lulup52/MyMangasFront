@@ -1,61 +1,55 @@
 import Axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ButtonPerso from './designComponent/Button';
 import './style/collectionListe.css';
 
 
-export default function CollectionAdd({parentFunction}) {
-    //const [moviesList, setMoviesList] = useState([]);
-    const [movieForm, setMovieForm] = useState({title:'', director: '', year:'', color: '', duration:'' });
+export default function CollectionAdd({parentFunction, allUserCollections, userId}) {
   
+    const [seriesNotInCOllection, setSeriesNotInCOllection] = useState([]);  
 
-    const handleSubmit = () => {
-      Axios.post(`http://localhost:8000/api/movies/post`, {
-        title : movieForm.title,
-        director: movieForm.director,
-        year: movieForm.year,
-        color: movieForm.color,
-        duration: movieForm.duration
+    useEffect(() => {
+    Axios.get(`http://localhost:8000/api/collections/serie_notin_collection/${userId}`)
+        .then((response) => {setSeriesNotInCOllection(response.data) })
+      
+        
+    },[])
 
-      })
-  
-      .then((res) => {
 
-      });
-    } 
+
+    // const handleSubmit = () => {
+    //   Axios.post(`http://localhost:8000/api/movies/post`, {
+    //   })
+    //   .then((res) => {
+    //   });
+    // } 
 
     return (
     <div className='modaleAddCollection'>
       <ButtonPerso adress={'function'} content={"×"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={parentFunction} />
 
         <div>Ajout d'un nouveau film</div>
-        <form onSubmit={handleSubmit}>
+        <form >
             <div className="">
                 <label htmlFor="titre">titre</label><br/>
-                <input className="" type="text" name="title" value={movieForm.title}
-                        onChange={(e) => setMovieForm(movieForm => ({...movieForm, title: e.target.value}))}/>
-            </div>
-            <div className="">
-                <label htmlFor="director">Producteur</label><br/>
-                <input className="" type="text" name="" value={movieForm.director}
-                        onChange={(e) => setMovieForm(movieForm => ({...movieForm, director : e.target.value}))}/>
-            </div>
-            <div className="">
-                <label htmlFor="year">année</label><br/>
-                <input className="" type="text" name="year" value={movieForm.year}
-                        onChange={(e) => setMovieForm(movieForm => ({...movieForm, year : e.target.value}))}/>
-            </div>
-            <div className="">
-                <label htmlFor="color">Couleur ?</label><br/>
-                <input className="" type="text" name="color" value={movieForm.color}
-                        onChange={(e) => setMovieForm(movieForm => ({...movieForm, color : e.target.value}))}/>
-            </div>
-            <div className="">
-                <label htmlFor="duration">Durée</label><br/>
-                <input className="" type="text" name="duration" value={movieForm.duration}
-                        onChange={(e) => setMovieForm(movieForm => ({...movieForm, duration :  e.target.value}))}/>
+                <input className="" type="text" name="title" placeholder="chose a série to add"/>
             </div>
             
+          <div className='addSerieColelction'>
+          {
+            seriesNotInCOllection.map(serie => 
+              <div className='blockManga' >
+  
+                <div className='titleBLockMangas'>{serie.title}</div>
+                <div className='imgContainer'>
+                  <img src={serie.ilustration} />
+                </div>
+  
+              </div>
+              )
+            }
+          </div>
+
             <input className="" type="submit" value="Enregistrer"/>
         </form>
     </div>

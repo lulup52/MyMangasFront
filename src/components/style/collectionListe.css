@@ -39,9 +39,17 @@
     margin-top: 3rem;
 }
 
+
+/*--------------------add new serie in collection ---------------------*/
+
 .modaleAddCollection {
+    height: 80vh;
+    overflow-x: scroll;
     padding: 3rem;
     border-radius: 30px;
     border: 3px solid black;
     background-color: white;
+}
+
+.addSerieColelction {
 }

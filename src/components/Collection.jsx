@@ -76,7 +76,7 @@ export default function Collection() {
       {
         modaleAddOn ? 
         <div className='modaleContainer' >
-          <ModaleCollectionAdd parentFunction={manageModaleAdd}/>
+          <ModaleCollectionAdd parentFunction={manageModaleAdd} allUserCollections={allUserCollections} userId={userId}/>
         </div>
         : ""
       }

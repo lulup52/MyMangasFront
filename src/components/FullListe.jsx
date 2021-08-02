@@ -24,6 +24,7 @@ export default function FullListe() {
   Axios.get(`http://localhost:8000/api/series`)
       .then((response) => {setAllSeries(response.data) })
   },[])
+  
   const [modaleDataOn, setModaleDataOn] = useState(false);  
   const [modaleAddOn, setModaleAddOn] = useState(false);  
 
