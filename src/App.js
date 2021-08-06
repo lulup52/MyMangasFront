@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -12,24 +12,30 @@ import Home from './components/Home'
 
 function App() {
 
+  const [userId, setUserId] = useState("1");
+    
   
- 
+  const changeUserId = (id) => {
+    setUserId(id)
+  }
 
 
   return (
+
+  
     <div>
       <Router>
         <Route path="/full_liste">
-          <FullListe />
+          <FullListe userId={userId}/>
         </Route>
         <Route path="/collection">
-          <Collection />
+          <Collection userId={userId} />
         </Route>
         <Route path="/movies">
-          <MoviesList />
+          <MoviesList userId={userId} />
         </Route>
         <Route exact path="/">
-          <Home />
+          <Home changeUserId={changeUserId}/>
         </Route>
       </Router>
     </div>

@@ -39,7 +39,8 @@ export default function CollectionAdd({parentFunction, allUserCollections, userI
           {
             seriesNotInCOllection.map(serie => 
               <div className='blockManga' >
-  
+                <ButtonPerso adress={'function'} content={"+"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={''} />
+
                 <div className='titleBLockMangas'>{serie.title}</div>
                 <div className='imgContainer'>
                   <img src={serie.ilustration} />

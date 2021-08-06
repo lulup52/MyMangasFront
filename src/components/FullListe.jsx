@@ -16,7 +16,7 @@ import Button from './designComponent/Button';
 
 
 
-export default function FullListe() {
+export default function FullListe({userId}) {
 
   const [allSeries, setAllSeries] = useState([]);  
 
@@ -42,6 +42,7 @@ export default function FullListe() {
     // }
     return (
       <>
+        <p className='userIdTest'>{userId}</p>
         <div className="pageContainer">
           <div className='titreButton'>
             <h2 className='titrePage'>All series </h2>
@@ -69,7 +70,7 @@ export default function FullListe() {
         {
           modaleDataOn ? 
           <div className='modaleContainer' >
-            <ModaleSerie modaleData={modaleData} manageModaleData={manageModaleData}/>
+            <ModaleSerie modaleData={modaleData} userId={userId} manageModaleData={manageModaleData}/>
             {    console.log(modaleData)
   }
           </div>

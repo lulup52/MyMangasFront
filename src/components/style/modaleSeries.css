@@ -48,7 +48,7 @@
     height: 50%;
 }
 
-.tomeCollectionListe {
+.tomeCollectionListe, .tomeSerieListe {
     display:  flex;
     flex-wrap: wrap;
     width: 90vw;

@@ -11,10 +11,9 @@ import ModaleCollection from './ModaleCollection'
 import ButtonPerso from './designComponent/Button';
 import ModaleCollectionAdd from './collectionAdd'
 
-export default function Collection() {
+export default function Collection({userId}) {
 // préparer l'axios pour ne récupérer que les séries présentes dans la colection de l'utilisateur
   // recevoir les info de la bdd test -> const colectionListe = tempDatas.liste_serie_colection
-    const [userId, setUserId] = useState(1);
     const [allUserCollections, setAllUserCollections] = useState([]);
     const [modaleDataOn, setModaleDataOn] = useState(false);  
     const [modaleAddOn, setModaleAddOn] = useState(false);  
@@ -37,11 +36,7 @@ export default function Collection() {
 
     return (
     <>
-    <select className='selectTest' onChange={(e)=> setUserId(e.target.value)}>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-    </select>
+      <p className='userIdTest'>{userId}</p>
       <div className="pageContainer">
         <div className='titreButton'>
           <h2 className='titrePage'>Your collection</h2>
