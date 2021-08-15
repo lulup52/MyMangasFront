@@ -17,7 +17,7 @@ export default function Home({changeUserId}) {
           <option value="3">3</option>
         </select>
         <div className='menuChoice'>
-          <Button adress={"movies"} content={"movies liste"} defaultClasse={"clickableButton"} classeClicked={"clickableButtonPressed"} />
+          <Button adress={"lectures"} content={"Lectures liste"} defaultClasse={"clickableButton"} classeClicked={"clickableButtonPressed"} />
           <Button adress={"collection"} content={"your collection"} defaultClasse={"clickableButton"} classeClicked={"clickableButtonPressed"} />
           <Button adress={"full_liste"} content={"Liste complète"} defaultClasse={"clickableButton"} classeClicked={"clickableButtonPressed"} />
         </div>
