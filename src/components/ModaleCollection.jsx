@@ -20,7 +20,7 @@ export default function ModaleCollection({modaleData, userId, manageModaleData})
 
   const [userTomesInCollection, setUserTomesInCollection] = useState([])
     useEffect(() => {
-    Axios.get(`http://localhost:8000/api/collections/alltomes_collection/${userId}/${modaleData.serieId}`)
+    Axios.get(`http://localhost:8000/api/collection/alltomes_collection/${userId}/${modaleData.serieId}`)
     
         .then((response) => {setUserTomesInCollection(response.data) })
     },[])

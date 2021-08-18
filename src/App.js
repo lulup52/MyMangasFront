@@ -7,7 +7,7 @@ import './App.css';
 
 import Collection from './components/Collection'
 import FullListe from './components/FullListe'
-import Lectures from './components/Lectures'
+import Lecture from './components/Lecture'
 import Home from './components/Home'
 
 function App() {
@@ -31,8 +31,8 @@ function App() {
         <Route path="/collection">
           <Collection userId={userId} />
         </Route>
-        <Route path="/lectures">
-          <Lectures userId={userId} />
+        <Route path="/lecture">
+          <Lecture userId={userId} />
         </Route>
         <Route exact path="/">
           <Home changeUserId={changeUserId}/>

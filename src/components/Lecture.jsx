@@ -11,18 +11,18 @@ import ModaleCollection from './ModaleCollection'
 import ButtonPerso from './designComponent/Button';
 import ModaleCollectionAdd from './collectionAdd'
 
-export default function Collection({userId}) {
+export default function Lecture({userId}) {
 // préparer l'axios pour ne récupérer que les séries présentes dans la colection de l'utilisateur
   // recevoir les info de la bdd test -> const colectionListe = tempDatas.liste_serie_colection
-    const [allUserCollection, setAllUserCollection] = useState([]);
+    const [allUserLecture, setAllUserLecture] = useState([]);
     const [modaleDataOn, setModaleDataOn] = useState(false);  
     const [modaleAddOn, setModaleAddOn] = useState(false);  
     const [modaleData, setModaleData] = useState({});  
 
     useEffect(() => {
-      Axios.get(`http://localhost:8000/api/collection/serie_collection/${userId}`)
+      Axios.get(`http://localhost:8000/api/lecture/series_lecture/${userId}`)
       
-          .then((response) => {setAllUserCollection(response.data) })
+          .then((response) => {setAllUserLecture(response.data) })
       },[userId])
 
      const manageModaleData = (colection) => {
@@ -39,12 +39,12 @@ export default function Collection({userId}) {
       <p className='userIdTest'>{userId}</p>
       <div className="pageContainer">
         <div className='titreButton'>
-          <h2 className='titrePage'>Your collection</h2>
-          <ButtonPerso adress={'function'} content={"+"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={manageModaleAdd} />
+          <h2 className='titrePage'>Your lecture</h2>
+          {/* <ButtonPerso adress={'function'} content={"+"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={manageModaleAdd} /> */}
         </div>
-        <div className='mangaCollectionContainer'>
+        <div className='mangaLectureContainer'>
         {
-          allUserCollection.map(colection => 
+          allUserLecture.map(colection => 
             <div className='blockManga' onClick={e => manageModaleData(colection)}>
 
               <div className='titleBLockMangas'>{colection.serie_title}</div>
@@ -71,7 +71,7 @@ export default function Collection({userId}) {
       {
         modaleAddOn ? 
         <div className='modaleContainer' >
-          <ModaleCollectionAdd parentFunction={manageModaleAdd} allUserCollection={allUserCollection} userId={userId}/>
+          <ModaleCollectionAdd parentFunction={manageModaleAdd} allUserLecture={allUserLecture} userId={userId}/>
         </div>
         : ""
       }

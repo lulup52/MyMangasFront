@@ -4,12 +4,12 @@ import ButtonPerso from './designComponent/Button';
 import './style/collectionListe.css';
 
 
-export default function CollectionAdd({parentFunction, allUserCollections, userId}) {
+export default function CollectionAdd({parentFunction, allUserCollection, userId}) {
   
     const [seriesNotInCOllection, setSeriesNotInCOllection] = useState([]);  
 
     useEffect(() => {
-    Axios.get(`http://localhost:8000/api/collections/serie_notin_collection/${userId}`)
+    Axios.get(`http://localhost:8000/api/collection/serie_notin_collection/${userId}`)
         .then((response) => {setSeriesNotInCOllection(response.data) })
       
         

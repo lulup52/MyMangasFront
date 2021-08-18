@@ -33,7 +33,7 @@ export default function ModaleSerie({modaleData, manageModaleData, userId}) {
       },[])
 
     useEffect(() => {
-      Axios.get(`http://localhost:8000/api/collections/tome_collection/${userId}`)
+      Axios.get(`http://localhost:8000/api/collection/tome_collection/${userId}`)
         .then((response) => {setTomesInColection(response.data) })
         
       },[userId])
