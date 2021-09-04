@@ -15,6 +15,9 @@ export default function CollectionAdd({parentFunction, allUserCollection, userId
         
     },[])
 
+    const addNewCollection =() => {
+      
+    }
 
 
     // const handleSubmit = () => {
@@ -39,7 +42,7 @@ export default function CollectionAdd({parentFunction, allUserCollection, userId
           {
             seriesNotInCOllection.map(serie => 
               <div className='blockManga' >
-                <ButtonPerso adress={'function'} content={"+"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={''} />
+                <ButtonPerso adress={'function'} content={"+col"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={addNewCollection} />
 
                 <div className='titleBLockMangas'>{serie.title}</div>
                 <div className='imgContainer'>
