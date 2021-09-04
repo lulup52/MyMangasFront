@@ -1,4 +1,4 @@
--- source C:/wamp/www/MyMangas/MyMangasFront/src/bddSQL/myMangaBDD.sql;
+-- source C:/Users/Admin/Desktop/my files/Dev/MyMangasFront/src/bddSQL/myMangaBDD.sql;
 
 DROP DATABASE my_mangas;
 CREATE DATABASE my_mangas;

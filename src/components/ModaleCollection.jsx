@@ -17,19 +17,24 @@ export default function ModaleCollection({modaleData, userId, manageModaleData, 
     }
   }
   const [userTomesInCollection, setUserTomesInCollection] = useState([])
-  
 
+  /*---les données des lectures et des collections étant destinées a être affichées avec le même visuel tout en fournissant 
+  les mêmes info, le composant ModaleCollection sera utilisé dans les 2 cas. On vérifiera d'ou ce composant a été appelé via la variable
+   parentComponent. On switch ainsi de requête au besoin------*/
+ 
   useEffect(() => {
     if(parentComponent === "lecture") {
-
-        Axios.get(`http://localhost:8000/api/collection/alltomes_collection/${userId}/${modaleData.serieId}`)
+        /*---est appelé si le composant parent est Lecture------*/
+        Axios.get(`http://localhost:8000/api/lecture/tomes_in_serie/${userId}/${modaleData.serieId}`)
         
         .then((response) => {setUserTomesInCollection(response.data) })
         
-    } else {
+    } else if(parentComponent === "collection") {
+        /*---est appelé si le composant parent est collection------*/
 
       Axios.get(`http://localhost:8000/api/collection/alltomes_collection/${userId}/${modaleData.serieId}`)
-      
+        /*---On charge ici la liste de tous les tomes présents soit dans la collection choisie par l'utilisateur, soit dans la lecture------*/
+
           .then((response) => {setUserTomesInCollection(response.data) })
     }
     },[])
@@ -38,9 +43,7 @@ export default function ModaleCollection({modaleData, userId, manageModaleData, 
     <div className='modale'>
       <ButtonPerso adress={'function'} content={"×"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={manageModaleData} />
        
-       {/* <div className='exitButtonModale'>
-        <p>+</p>
-      </div> */}
+
       <div className='modaleTitleCollection'>{modaleData.serie_title}</div>
       <div className='modaleImageCollection'>
         <img src={modaleData.ilustration} />

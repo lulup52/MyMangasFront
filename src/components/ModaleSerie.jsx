@@ -63,6 +63,8 @@ export default function ModaleSerie({modaleData, manageModaleData, userId}) {
           allTomesInSerie.map((e, i) => 
             <div className="tomeDetailsContainer"  onClick={(e) => showDetails(e, i)}>
               <div className="blockTomeCollection" >
+                {/* !!!!!!!!!!!!!! réaliser un bouton faisant appel à cette route 
+                "POST http://localhost:8000/api/collection/tome_collection_add/:userid/:tomeid" pour ajouter le tome en question a la liste des collections de l'utilisateur si celui ci n'est pas encore présent!!!!!!!!!!!!!!!!!*/}
                 <p>{e.subtitle}</p>
                 <p>{e.num_tome}</p>
               

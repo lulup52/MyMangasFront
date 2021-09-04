@@ -64,7 +64,7 @@ export default function Collection({userId}) {
       {
         modaleDataOn ? 
         <div className='modaleContainer' >
-          <ModaleCollection modaleData={modaleData} userId={userId} manageModaleData={manageModaleData}/>
+          <ModaleCollection parentComponent={"collection"} modaleData={modaleData} userId={userId} manageModaleData={manageModaleData}/>
         </div>
         : ""
       }
