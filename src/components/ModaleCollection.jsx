@@ -4,7 +4,7 @@ import ButtonPerso from './designComponent/Button';
 
 import './style/modaleSeries.css';
 
-export default function ModaleCollection({modaleData, userId, manageModaleData}) {
+export default function ModaleCollection({modaleData, userId, manageModaleData, parentComponent}) {
    
   const showDetails = (e, i) => {
     let detailsTome = document.querySelector(`#detailsTome${i}`)
@@ -16,13 +16,22 @@ export default function ModaleCollection({modaleData, userId, manageModaleData})
 
     }
   }
+  const [userTomesInCollection, setUserTomesInCollection] = useState([])
   
 
-  const [userTomesInCollection, setUserTomesInCollection] = useState([])
-    useEffect(() => {
-    Axios.get(`http://localhost:8000/api/collection/alltomes_collection/${userId}/${modaleData.serieId}`)
-    
+  useEffect(() => {
+    if(parentComponent === "lecture") {
+
+        Axios.get(`http://localhost:8000/api/collection/alltomes_collection/${userId}/${modaleData.serieId}`)
+        
         .then((response) => {setUserTomesInCollection(response.data) })
+        
+    } else {
+
+      Axios.get(`http://localhost:8000/api/collection/alltomes_collection/${userId}/${modaleData.serieId}`)
+      
+          .then((response) => {setUserTomesInCollection(response.data) })
+    }
     },[])
 
     return (

@@ -7,13 +7,13 @@ import {
 } from 'react-router-dom';
 import './style/collectionListe.css';
 
-import ModaleCollection from './ModaleCollection'
+import ModaleLecture from './ModaleCollection'
 import ButtonPerso from './designComponent/Button';
 import ModaleCollectionAdd from './collectionAdd'
 
 export default function Lecture({userId}) {
-// préparer l'axios pour ne récupérer que les séries présentes dans la colection de l'utilisateur
-  // recevoir les info de la bdd test -> const colectionListe = tempDatas.liste_serie_colection
+// préparer l'axios pour ne récupérer que les séries présentes dans la lecture de l'utilisateur
+  // recevoir les info de la bdd test -> const lectureListe = tempDatas.liste_serie_lecture
     const [allUserLecture, setAllUserLecture] = useState([]);
     const [modaleDataOn, setModaleDataOn] = useState(false);  
     const [modaleAddOn, setModaleAddOn] = useState(false);  
@@ -21,13 +21,12 @@ export default function Lecture({userId}) {
 
     useEffect(() => {
       Axios.get(`http://localhost:8000/api/lecture/series_lecture/${userId}`)
-      
-          .then((response) => {setAllUserLecture(response.data) })
+      .then((res) => {setAllUserLecture(res.data)})
       },[userId])
 
-     const manageModaleData = (colection) => {
+     const manageModaleData = (lecture) => {
       setModaleDataOn(!modaleDataOn)
-      setModaleData(colection)
+      setModaleData(lecture)
     }
 
     const manageModaleAdd = () => {
@@ -44,12 +43,12 @@ export default function Lecture({userId}) {
         </div>
         <div className='mangaLectureContainer'>
         {
-          allUserLecture.map(colection => 
-            <div className='blockManga' onClick={e => manageModaleData(colection)}>
+          allUserLecture.map(lecture => 
+            <div className='blockManga' onClick={ () => manageModaleData(lecture)}>
 
-              <div className='titleBLockMangas'>{colection.serie_title}</div>
+              <div className='titleBLockMangas'>{lecture.serie_title}</div>
               <div className='imgContainer'>
-                <img src={colection.ilustration} />
+                <img src={lecture.ilustration} />
               </div>
 
             </div>
@@ -64,7 +63,7 @@ export default function Lecture({userId}) {
       {
         modaleDataOn ? 
         <div className='modaleContainer' >
-          <ModaleCollection modaleData={modaleData} userId={userId} manageModaleData={manageModaleData}/>
+          <ModaleLecture parentComponent={'lecture'} modaleData={modaleData} userId={userId} manageModaleData={manageModaleData}/>
         </div>
         : ""
       }

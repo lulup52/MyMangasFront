@@ -1,4 +1,4 @@
--- source C:/Users/Admin/Desktop/my files/Dev/MyMangasFront/src/bddSQL/myMangaBDD.sql
+-- source C:/wamp/www/MyMangas/MyMangasFront/src/bddSQL/myMangaBDD.sql;
 
 DROP DATABASE my_mangas;
 CREATE DATABASE my_mangas;
@@ -259,27 +259,28 @@ VALUES
 (1,17),
 (1,18),
 
-(2,1),
-(2,2),
-(2,3),
+(2,7),
+(2,8),
+(2,9),
 
-(3,4),
-(3,7),
-(3,8),
-(3,9)
+(3,10),
+(3,11),
+(3,12),
+(3,13),
+(3,14),
+(3,15),
+(3,16),
+(3,17)
 ;
 
 INSERT INTO lecture (user_id, tome_id )
  VALUES 
-(1,1),
-(1,2),
-(1,3),
-(1,4),
-(1,5),
+
+(1,18),
 
 (2,1),
 (2,2),
-(2,3),
+(2,8),
 
 (3,4),
 (3,7),
