@@ -9,6 +9,7 @@ import './style/collectionListe.css';
 
 import ModaleCollection from './ModaleCollection'
 import ButtonPerso from './designComponent/Button';
+import BlockTome from './structureComponents/BlockSerie';
 import ModaleCollectionAdd from './collectionAdd'
 
 export default function Collection({userId}) {
@@ -25,9 +26,9 @@ export default function Collection({userId}) {
           .then((response) => {setAllUserCollection(response.data) })
       },[userId])
 
-     const manageModaleData = (colection) => {
+     const manageModaleData = (serie) => {
       setModaleDataOn(!modaleDataOn)
-      setModaleData(colection)
+      setModaleData(serie)
     }
 
     const manageModaleAdd = () => {
@@ -43,16 +44,10 @@ export default function Collection({userId}) {
           <ButtonPerso adress={'function'} content={"+"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={manageModaleAdd} />
         </div>
         <div className='mangaCollectionContainer'>
+      
         {
           allUserCollection.map(colection => 
-            <div className='blockManga' onClick={e => manageModaleData(colection)}>
-
-              <div className='titleBLockMangas'>{colection.serie_title}</div>
-              <div className='imgContainer'>
-                <img src={colection.ilustration} />
-              </div>
-
-            </div>
+              <BlockTome serie={colection} modalFunction={manageModaleData} />
             )
           }
         </div>

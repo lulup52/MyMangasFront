@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import ButtonPerso from './designComponent/Button';
+import BlockManga from './BlockManga'
 import './style/collectionListe.css';
 
 
@@ -15,23 +16,14 @@ export default function CollectionAdd({parentFunction, allUserCollection, userId
         
     },[])
 
-    const addNewCollection =() => {
-      
-    }
+ 
 
-
-    // const handleSubmit = () => {
-    //   Axios.post(`http://localhost:8000/api/movies/post`, {
-    //   })
-    //   .then((res) => {
-    //   });
-    // } 
 
     return (
     <div className='modaleAddCollection'>
       <ButtonPerso adress={'function'} content={"×"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={parentFunction} />
 
-        <div>Ajout d'un nouveau film</div>
+        <div>Ajout d'une nouvelle collection</div>
         <form >
             <div className="">
                 <label htmlFor="titre">titre</label><br/>
@@ -41,15 +33,7 @@ export default function CollectionAdd({parentFunction, allUserCollection, userId
           <div className='addSerieColelction'>
           {
             seriesNotInCOllection.map(serie => 
-              <div className='blockManga' >
-                <ButtonPerso adress={'function'} content={"+col"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={addNewCollection} />
-
-                <div className='titleBLockMangas'>{serie.title}</div>
-                <div className='imgContainer'>
-                  <img src={serie.ilustration} />
-                </div>
-  
-              </div>
+              <BlockManga serie={serie}/>
               )
             }
           </div>
