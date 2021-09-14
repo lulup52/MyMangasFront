@@ -1,18 +1,11 @@
 import Axios from 'axios';
-// import datasImport from '../temporaryDB/dbTest.json';
 import NavBar from './NavBar';
 import React, { useState, useEffect } from 'react';
 import './style/basicsElements.css';
 import './style/fullListe.css';
 
-import {
-  Link,
-} from 'react-router-dom';
 
-import collectionAdd from './collectionAdd'
 import ModaleSerie from './ModaleSerie'
-// import ModaleAddSerie from './ModaleAddSerie'
-import Button from './designComponent/Button';
 
 
 
@@ -26,7 +19,6 @@ export default function FullListe({userId}) {
   },[])
   
   const [modaleDataOn, setModaleDataOn] = useState(false);  
-  const [modaleAddOn, setModaleAddOn] = useState(false);  
 
   const [modaleData, setModaleData] = useState({});  
 
@@ -53,9 +45,9 @@ export default function FullListe({userId}) {
             allSeries.map(serie => 
               <div className='blockManga' onClick={e => manageModaleData(serie)}>
   
-                <div className='titleBLockMangas'>{serie.title}</div>
+                <div className='titleBLockMangas'>{serie.serie_title}</div>
                 <div className='imgContainer'>
-                  <img src={serie.ilustration} />
+                  <img src={serie.ilustration} alt={`here is a simple ilustration of the manga ${serie.serie_title}`}/>
                 </div>
   
               </div>

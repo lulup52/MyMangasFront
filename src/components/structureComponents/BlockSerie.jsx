@@ -4,7 +4,6 @@ import React /*, { useState, useEffect }*/ from 'react';
 /* ------------------show the title and the serie picture ---------------------*/
 export default function BlockTome({serie, modalFunction}) {
     
-    console.log(modalFunction === "")
     const liste= () => {
         
         if(modalFunction === ""){

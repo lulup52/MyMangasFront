@@ -53,7 +53,7 @@ export default function ModaleCollection({modaleData, userId, manageModaleData, 
       <div className='tomeCollectionListe'>
         {
           userTomesInCollection.map((e, i) => 
-            <div className="tomeDetailsContainer"  onClick={(e) => showDetails(e, i)}>
+            <div key={`keyTome${i}`} className="tomeDetailsContainer"  onClick={(e) => showDetails(e, i)}>
               <div className="blockTomeCollection" >
                 <p>{e.subtitle}</p>
                 <p>{e.num_tome}</p>

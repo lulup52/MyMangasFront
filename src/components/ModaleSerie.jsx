@@ -21,7 +21,7 @@ export default function ModaleSerie({modaleData, manageModaleData, userId}) {
   
       }
     }
-
+    console.log(modaleData)
     useEffect(() => {
       Axios.get(`http://localhost:8000/api/series/alltomes_serie/${modaleData.id}`)
        .then((response) => {setAllTomesInSerie(response.data) })
@@ -42,11 +42,11 @@ export default function ModaleSerie({modaleData, manageModaleData, userId}) {
     <div className='modale' >
       <ButtonPerso adress={'function'} content={"×"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={manageModaleData} />
       <p className='userIdTest'>{userId}</p>
-      <div className='modaleTitle'>{modaleData.title}</div>
+      <div className='modaleTitle'>{modaleData.serie_title}</div>
       <button onClick={() => test()}>YO</button>
 
       <div className='modaleImage'>
-        <img src={modaleData.ilustration} />
+        <img src={modaleData.ilustration} alt={`here is a simple ilustration of the manga ${modaleData.serie_title}`} />
       </div>
       <div className='modaleAuthor'>{modaleData.author}</div>
       <div className='modaleSerieDescribe'>

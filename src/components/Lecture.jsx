@@ -1,14 +1,9 @@
 import Axios from 'axios';
 import NavBar from './NavBar';
 import React, { useState, useEffect } from 'react';
-import tempDatas from "../temporaryDB/dbTest.json"
-import {
-  Link,
-} from 'react-router-dom';
 import './style/collectionListe.css';
 
 import ModaleLecture from './ModaleCollection'
-import ButtonPerso from './designComponent/Button';
 import ModaleCollectionAdd from './collectionAdd'
 import BlockTome from './structureComponents/BlockSerie';
 
@@ -44,8 +39,8 @@ export default function Lecture({userId}) {
         </div>
         <div className='mangaLectureContainer'>
         {
-          allUserLecture.map(lecture => 
-            <BlockTome serie={lecture} modalFunction={manageModaleData} />
+          allUserLecture.map(lecture=> 
+            <BlockTome key={`keyFor${lecture.serie_title}`} serie={lecture} modalFunction={manageModaleData} />
             )
           }
         </div>
