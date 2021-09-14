@@ -23,7 +23,6 @@ export default function CollectionAdd({parentFunction, userId}) {
       <ButtonPerso adress={'function'} content={"×"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={parentFunction} />
 
         <div>Ajout d'une nouvelle collection</div>
-        <form >
             <div className="">
                 <label htmlFor="titre">titre</label><br/>
                 <input className="" type="text" name="title" placeholder="chose a serie to add"/>
@@ -32,19 +31,16 @@ export default function CollectionAdd({parentFunction, userId}) {
           <div className='addSerieColelction'>
           {
             seriesNotInCOllection.map(serie => 
-              <div className="blocAndAddButton">
+              <div key={`keySerie${serie.id}`} className="blocAndAddButton">
                 
                 <BlockManga serie={serie} modalFunction={""}/>
-                <ListeTomes serieId={serie.id}/>
+                <ListeTomes parentFunction={parentFunction} userId={userId} serieId={serie.id}/>
                 
               </div>
                
               )
             }
           </div>
-
-            <input className="" type="submit" value="Enregistrer"/>
-        </form>
     </div>
   );
 }

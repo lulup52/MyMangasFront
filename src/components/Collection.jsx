@@ -16,18 +16,24 @@ export default function Collection({userId}) {
     const [modaleData, setModaleData] = useState({});  
 
     useEffect(() => {
-      Axios.get(`http://localhost:8000/api/collection/serie_collection/${userId}`)
-      
-          .then((response) => {setAllUserCollection(response.data) })
+      importDatas()
       },[userId])
 
+    const importDatas = () => {
+      Axios.get(`http://localhost:8000/api/collection/serie_collection/${userId}`)
+      
+      .then((response) => {setAllUserCollection(response.data) })
+    }
      const manageModaleData = (serie) => {
       setModaleDataOn(!modaleDataOn)
       setModaleData(serie)
     }
-
+    
     const manageModaleAdd = () => {
+      console.log('bububu')
+      importDatas()
       setModaleAddOn(!modaleAddOn)
+
     }
 
     return (
