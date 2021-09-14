@@ -10,6 +10,7 @@ import './style/collectionListe.css';
 import ModaleLecture from './ModaleCollection'
 import ButtonPerso from './designComponent/Button';
 import ModaleCollectionAdd from './collectionAdd'
+import BlockTome from './structureComponents/BlockSerie';
 
 export default function Lecture({userId}) {
 // préparer l'axios pour ne récupérer que les séries présentes dans la lecture de l'utilisateur
@@ -44,14 +45,7 @@ export default function Lecture({userId}) {
         <div className='mangaLectureContainer'>
         {
           allUserLecture.map(lecture => 
-            <div className='blockManga' onClick={ () => manageModaleData(lecture)}>
-
-              <div className='titleBLockMangas'>{lecture.serie_title}</div>
-              <div className='imgContainer'>
-                <img src={lecture.ilustration} />
-              </div>
-
-            </div>
+            <BlockTome serie={lecture} modalFunction={manageModaleData} />
             )
           }
         </div>

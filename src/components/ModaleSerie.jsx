@@ -3,11 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import ButtonPerso from './designComponent/Button';
 
-import {
-
-    Link,
-  } from 'react-router-dom';
-
 import './style/basicsElements.css';
 import './style/modaleSeries.css';
 
@@ -30,7 +25,7 @@ export default function ModaleSerie({modaleData, manageModaleData, userId}) {
     useEffect(() => {
       Axios.get(`http://localhost:8000/api/series/alltomes_serie/${modaleData.id}`)
        .then((response) => {setAllTomesInSerie(response.data) })
-      },[])
+      },[modaleData.id])
 
     useEffect(() => {
       Axios.get(`http://localhost:8000/api/collection/tome_collection/${userId}`)

@@ -1,8 +1,4 @@
-import Axios from 'axios';
-import React, { useState } from 'react';
-import {
-  Link,
-} from 'react-router-dom';
+import React from 'react';
 import ButtonPerso from './designComponent/Button';
 
 export default function NavBar() {

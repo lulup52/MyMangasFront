@@ -14,7 +14,7 @@ CREATE TABLE `user`
 CREATE TABLE `serie`
 (
     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    `title` VARCHAR(100) NOT NULL,
+    `serie_title` VARCHAR(100) NOT NULL,
     `nbr_of_tome` INT,
     `ilustration` VARCHAR(500),
     `author` VARCHAR(150),
@@ -61,7 +61,7 @@ VALUES
 ('toto', '2222');
 
 
-INSERT INTO serie (id, title, nbr_of_tome, ilustration, author, sumary )
+INSERT INTO serie (id, serie_title, nbr_of_tome, ilustration, author, sumary )
 VALUES 
 
 (1,
