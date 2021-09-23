@@ -34,7 +34,7 @@ export default function CollectionAdd({parentFunction, userId}) {
               <div key={`keySerie${serie.id}`} className="blocAndAddButton">
                 
                 <BlockManga serie={serie} modalFunction={""}/>
-                <ListeTomes parentFunction={parentFunction} userId={userId} serieId={serie.id}/>
+                <ListeTomes parentComponent={"modalAddCollection"} parentFunction={parentFunction} userId={userId} serieId={serie.id}/>
                 
               </div>
                

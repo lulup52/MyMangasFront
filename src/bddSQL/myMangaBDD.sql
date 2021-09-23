@@ -175,7 +175,7 @@ VALUES
 "boruto",
 "https://static.fnac-static.com/multimedia/Images/FR/NR/1e/b9/94/9746718/1507-1/tsp20210301164714/Boruto-Naruto-next-generations-Tome-5.jpg",
 "sous ti5tre du5 tome 5",
-4,
+5,
 "cec5i est le res5ume du tome 5 de boruto et 5sert de test"
 ),
 (11,

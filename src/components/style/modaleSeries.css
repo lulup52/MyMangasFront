@@ -8,6 +8,10 @@
     padding: 1rem;
 }
 
+.detailsAndAddContainer {
+    display: flex;
+}
+
 .exitButtonModale {
     margin: -5px 0 0 -5px;
     position: absolute;

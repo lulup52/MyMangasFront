@@ -19,20 +19,31 @@ export default function Collection({userId}) {
       importDatas()
       },[userId])
 
+    const resetId = (id) => {
+      userId = id
+    }
+
     const importDatas = () => {
+
+    
       Axios.get(`http://localhost:8000/api/collection/serie_collection/${userId}`)
-      
+
       .then((response) => {setAllUserCollection(response.data) })
     }
+    
      const manageModaleData = (serie) => {
-      setModaleDataOn(!modaleDataOn)
-      setModaleData(serie)
+       setModaleDataOn(!modaleDataOn)
+       setModaleData(serie)
+       importDatas()
     }
     
-    const manageModaleAdd = () => {
-      console.log('bububu')
+    const manageModaleAdd = (fromComponent) => {
       importDatas()
-      setModaleAddOn(!modaleAddOn)
+      if (fromComponent=== "modalCollection") {
+
+      } else {
+        setModaleAddOn(!modaleAddOn)
+      }
 
     }
 
@@ -47,10 +58,13 @@ export default function Collection({userId}) {
         <div className='mangaCollectionContainer'>
       
         {
-          allUserCollection.map(serie => 
-              <BlockSerie key={`keyFor${serie.serie_title}`} serie={serie} modalFunction={manageModaleData} />
-            )
-          }
+          allUserCollection.length === 0 ? 
+          <div>aucune série n'est enregistrée</div>
+          :
+        allUserCollection.map(serie => 
+            <BlockSerie key={`keyFor${serie.serie_title}`} serie={serie} modalFunction={manageModaleData} />
+          )
+        }
         </div>
       </div>
       <div className='navBarContainer' >
@@ -60,7 +74,7 @@ export default function Collection({userId}) {
       {
         modaleDataOn ? 
         <div className='modaleContainer' >
-          <ModaleCollection parentComponent={"collection"} modaleData={modaleData} userId={userId} manageModaleData={manageModaleData}/>
+          <ModaleCollection parentComponent={"collection"} modaleData={modaleData} userId={userId} parentFunction={manageModaleData}/>
         </div>
         : ""
       }

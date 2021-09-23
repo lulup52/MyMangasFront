@@ -1,65 +1,91 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import ButtonPerso from './designComponent/Button';
+import ListeTomes from './structureComponents/ListeTomes';
 
 import './style/modaleSeries.css';
 
-export default function ModaleCollection({modaleData, userId, manageModaleData, parentComponent}) {
+export default function ModaleCollection({modaleData, userId, parentFunction, parentComponent}) {
    
-  const showDetails = (e, i) => {
-    let detailsTome = document.querySelector(`#detailsTome${i}`)
-    if ( detailsTome.style.display !== "flex") {
- 
-      detailsTome.style.display = "flex"
-    } else {
-      detailsTome.style.display = "none"
-
-    }
-  }
   const [userTomesInCollection, setUserTomesInCollection] = useState([])
-
+  
   /*---les données des lectures et des collections étant destinées a être affichées avec le même visuel tout en fournissant 
   les mêmes info, le composant ModaleCollection sera utilisé dans les 2 cas. On vérifiera d'ou ce composant a été appelé via la variable
-   parentComponent. On switch ainsi de requête au besoin------*/
- 
+  parentComponent. On switch ainsi de requête au besoin------*/
+  
   useEffect(() => {
+    buildListe()
+  },[])
+  
+  const buildListe = () => {
+
     if(parentComponent === "lecture") {
-        /*---est appelé si le composant parent est Lecture------*/
-        Axios.get(`http://localhost:8000/api/lecture/tomes_in_serie/${userId}/${modaleData.serieId}`)
-        
-        .then((response) => {setUserTomesInCollection(response.data) })
-        
+      /*---est appelé si le composant parent est Lecture------*/
+      Axios.get(`http://localhost:8000/api/lecture/tomes_in_serie/${userId}/${modaleData.serieId}`)
+      
+      .then((response) => {setUserTomesInCollection(response.data) })
+      
     } else if(parentComponent === "collection") {
-        /*---est appelé si le composant parent est collection------*/
-
+      /*---est appelé si le composant parent est collection------*/
+      
       Axios.get(`http://localhost:8000/api/collection/alltomes_collection/${userId}/${modaleData.serieId}`)
-        /*---On charge ici la liste de tous les tomes présents soit dans la collection choisie par l'utilisateur, soit dans la lecture------*/
-
-          .then((response) => {setUserTomesInCollection(response.data) })
+      /*---On charge ici la liste de tous les tomes présents soit dans la collection choisie par l'utilisateur, soit dans la lecture------*/
+      
+      .then((response) => {setUserTomesInCollection(response.data) })
     }
-    },[])
+  }
+      
+    const showDetails = (e, i) => {
+      let detailsTome = document.querySelector(`#detailsTome${i}`)
+      if ( detailsTome.style.display !== "flex") {
+  
+        detailsTome.style.display = "flex"
+      } else {
+        detailsTome.style.display = "none"
+
+      }
+    }
+     
+    const deleteTome = (tomeId) => {
+      if(userTomesInCollection.length === 1) {
+        Axios.delete(`http://localhost:8000/api/collection/delete/${userId}/${tomeId}`)
+        .then((response) => parentFunction())
+      } else {
+        Axios.delete(`http://localhost:8000/api/collection/delete/${userId}/${tomeId}`)
+        .then((response) => buildListe())
+        
+      }
+    }
 
     return (
     <div className='modale'>
-      <ButtonPerso adress={'function'} content={"×"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={manageModaleData} />
+      <ButtonPerso adress={'function'} content={"×"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={parentFunction} />
        
-
-      <div className='modaleTitleCollection'>{modaleData.serie_title}</div>
-      <div className='modaleImageCollection'>
-        <img src={modaleData.ilustration} />
+      <div className='detailsAndAddContainer'>
+        <div className='detaileContainer'>
+          <div className='modaleTitleCollection'>{modaleData.serie_title}</div>
+          <div className='modaleImageCollection'><img src={modaleData.ilustration} /></div>
+          <div className=''>{modaleData.author}</div>
+        </div>
+        <div className='addContianer'>
+          <ListeTomes userId={userId} serieId={modaleData.serieId} parentFunction={buildListe} parentComponent={"modalCollection"}/>
+        </div>
       </div>
-      <div className=''>{modaleData.author}</div>
+
+      
 
       <div className='tomeCollectionListe'>
         {
-          userTomesInCollection.map((e, i) => 
-            <div key={`keyTome${i}`} className="tomeDetailsContainer"  onClick={(e) => showDetails(e, i)}>
+          userTomesInCollection.map((tome, i) => 
+            <div key={`keyTome${i}`} className="tomeDetailsContainer" >
               <div className="blockTomeCollection" >
-                <p>{e.subtitle}</p>
-                <p>{e.num_tome}</p>
+                <p>{tome.subtitle}</p>
+                <p>{tome.num_tome}</p>
+                <button  onClick={() => showDetails(tome, i)}>details</button>
+                <button onClick={() => deleteTome(tome.tomeId)} >delete</button>
               </div>
               <div className="blockTomeDetails" id={`detailsTome${i}`}>
-                <p>{e.tome_sumary}</p>
+                <p>{tome.tome_sumary}</p>
               </div>
             </div>
             )
