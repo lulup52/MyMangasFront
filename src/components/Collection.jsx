@@ -2,6 +2,7 @@ import Axios from 'axios';
 import NavBar from './NavBar';
 import React, { useState, useEffect } from 'react';
 import './style/collectionListe.css';
+import './style/basicsElements.css';
 
 import ModaleCollection from './ModaleCollection'
 import ButtonPerso from './designComponent/Button';
@@ -59,7 +60,9 @@ export default function Collection({userId}) {
       
         {
           allUserCollection.length === 0 ? 
-          <div>aucune série n'est enregistrée</div>
+          <div className="noSeriesMessage">
+            <p>aucune série n'est enregistrée</p>
+          </div>
           :
         allUserCollection.map(serie => 
             <BlockSerie key={`keyFor${serie.serie_title}`} serie={serie} modalFunction={manageModaleData} />
