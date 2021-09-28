@@ -4,8 +4,10 @@ import React, { useState, useEffect } from 'react';
 import './style/collectionListe.css';
 import './style/basicsElements.css';
 
+
 import ModaleCollection from './ModaleCollection'
 import ButtonPerso from './designComponent/Button';
+
 import BlockSerie from './structureComponents/BlockSerie';
 import ModaleCollectionAdd from './collectionAdd'
 

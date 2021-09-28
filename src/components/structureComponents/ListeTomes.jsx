@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ButtonPerso from '../designComponent/Button';
 import Axios from 'axios';
-
+import TreeDotsButton from '../designComponent/MultyDotsButton';
 // import Axios from 'axios';
 
 /* ------------------show the title and the serie picture ---------------------*/

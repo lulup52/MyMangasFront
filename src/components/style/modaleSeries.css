@@ -58,8 +58,16 @@
     width: 90vw;
 }
 
-.tomeDetailsContainer {
+.tomeDetailsButtonContainer {
     width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: top;
+    margin-bottom: .5rem;
+}
+
+.tomeDetailsContainer {
+    width: 65vw;
 }
 
 .blockTome {
@@ -87,7 +95,6 @@
     height: 10vw;
     font-size: 1rem;
     border-radius: 10px;
-    margin-top: 1.5rem;
     background-color: #fff;
     color: black;
     box-sizing: border-box;

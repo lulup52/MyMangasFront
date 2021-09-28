@@ -1,0 +1,110 @@
+p {
+    margin: 0;
+}
+
+
+/*----------------bouton 3 ptn-----------------*/
+
+.treeDotsButtonContainer {
+    transition: 500ms;
+    position: relative  ;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    background-color: rgb(255, 97, 216);
+    border-radius: 50px;
+    border: solid 2px black;
+    box-sizing: content-box;
+    color: white;
+    font-size: 4rem;
+
+
+    .buttonHolder {
+        height: 2rem;
+        width: 2rem;
+        position: absolute;
+        background-color: rgba(0, 128, 0, 0);
+        z-index: 1;
+        border-radius: 50px;
+        border: solid 2px rgba(0, 0, 0, 0);
+    }
+
+    .buttonContainer {
+        margin: auto auto;
+        position: relative  ;
+        display: flex;
+        opacity: 1;
+
+     
+        .button {
+            position: relative;
+            transition-property: width, height;
+            transition-duration: 500ms;
+            top: -2px;
+            left: 0px;
+            border-radius: 50px;
+            background-color: rgb(185, 0, 139);
+            height: .4rem;
+            width: .4rem;
+            margin: .1rem;
+            box-shadow: 0px 3px 1px black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            
+            
+            i {
+                transition: 500ms;
+                opacity: 0;
+                color: black;
+                font-size: .1rem;
+
+            }
+
+            &:hover {
+                background: white;
+                i {
+                    color: rgb(185, 0, 139);
+    
+                }
+            }
+            
+
+
+        }
+
+    
+    }
+    &:hover {
+        transition: 500ms;
+        width: 6rem;
+        .buttonHolder {
+            transition: 700ms;
+            height: 0;
+            width: 0;
+
+
+        }
+        .button {
+            background-color: rgb(185, 0, 139);
+            height: 1.5rem;
+            width: 1.5rem;
+            box-shadow: 0px 6px 1px black;
+            i {
+                transition: 500ms;
+                opacity: 1;
+                color: white;
+                font-size: 1.3rem;
+            }
+
+            &:active {
+               
+                top: 0px;
+                box-shadow: 0px 1px 1px black !important;
+        }
+    }
+}
+}
+.test {
+}

@@ -1,0 +1,119 @@
+p {
+  margin: 0;
+}
+
+/*----------------bouton 3 ptn-----------------*/
+.treeDotsButtonContainer {
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  position: relative;
+  height: 2rem;
+  width: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #ff61d8;
+  border-radius: 50px;
+  border: solid 2px black;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  color: white;
+  font-size: 4rem;
+}
+
+.treeDotsButtonContainer .buttonHolder {
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  background-color: rgba(0, 128, 0, 0);
+  z-index: 1;
+  border-radius: 50px;
+  border: solid 2px rgba(0, 0, 0, 0);
+}
+
+.treeDotsButtonContainer .buttonContainer {
+  margin: auto auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+}
+
+.treeDotsButtonContainer .buttonContainer .button {
+  position: relative;
+  -webkit-transition-property: width, height;
+  transition-property: width, height;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  top: -2px;
+  left: 0px;
+  border-radius: 50px;
+  background-color: #b9008b;
+  height: .4rem;
+  width: .4rem;
+  margin: .1rem;
+  -webkit-box-shadow: 0px 3px 1px black;
+          box-shadow: 0px 3px 1px black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.treeDotsButtonContainer .buttonContainer .button i {
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  opacity: 0;
+  color: black;
+  font-size: .1rem;
+}
+
+.treeDotsButtonContainer .buttonContainer .button:hover {
+  background: white;
+}
+
+.treeDotsButtonContainer .buttonContainer .button:hover i {
+  color: #b9008b;
+}
+
+.treeDotsButtonContainer:hover {
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  width: 6rem;
+}
+
+.treeDotsButtonContainer:hover .buttonHolder {
+  -webkit-transition: 700ms;
+  transition: 700ms;
+  height: 0;
+  width: 0;
+}
+
+.treeDotsButtonContainer:hover .button {
+  background-color: #b9008b;
+  height: 1.5rem;
+  width: 1.5rem;
+  -webkit-box-shadow: 0px 6px 1px black;
+          box-shadow: 0px 6px 1px black;
+}
+
+.treeDotsButtonContainer:hover .button i {
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  opacity: 1;
+  color: white;
+  font-size: 1.3rem;
+}
+
+.treeDotsButtonContainer:hover .button:active {
+  top: 0px;
+  -webkit-box-shadow: 0px 1px 1px black !important;
+          box-shadow: 0px 1px 1px black !important;
+}
+/*# sourceMappingURL=animation.css.map */

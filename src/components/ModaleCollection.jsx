@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import ButtonPerso from './designComponent/Button';
 import ListeTomes from './structureComponents/ListeTomes';
+import MultyDotsButton from './designComponent/MultyDotsButton';
 
 import './style/modaleSeries.css';
 
@@ -35,15 +36,20 @@ export default function ModaleCollection({modaleData, userId, parentFunction, pa
     }
   }
       
-    const showDetails = (e, i) => {
+    const showDetails = (i) => {
       let detailsTome = document.querySelector(`#detailsTome${i}`)
-      if ( detailsTome.style.display !== "flex") {
-  
-        detailsTome.style.display = "flex"
-      } else {
-        detailsTome.style.display = "none"
+      let allDetailsDomes = document.querySelectorAll(`.detailsTome`)
+      allDetailsDomes.forEach(element => {
+        element.style.display = "none"
+      });
 
-      }
+      if ( detailsTome.style.display !== "none") {
+  
+        detailsTome.style.display = "none"
+      } else {
+        detailsTome.style.display = "flex"
+
+      }   
     }
      
     const deleteTome = (tomeId) => {
@@ -77,16 +83,20 @@ export default function ModaleCollection({modaleData, userId, parentFunction, pa
       <div className='tomeCollectionListe'>
         {
           userTomesInCollection.map((tome, i) => 
-            <div key={`keyTome${i}`} className="tomeDetailsContainer" >
-              <div className="blockTomeCollection" >
-                <p>{tome.subtitle}</p>
-                <p>{tome.num_tome}</p>
-                <button  onClick={() => showDetails(tome, i)}>details</button>
-                <button onClick={() => deleteTome(tome.tomeId)} >delete</button>
+            <div key={`keyTome${i}`} className="tomeDetailsButtonContainer" >
+              <div className="tomeDetailsContainer">
+                <div className="blockTomeCollection" >
+                  <p>{tome.subtitle}</p>
+                  <p>{tome.num_tome}</p>
+
+                  {/* <button  onClick={() => showDetails(tome, i)}>details</button>
+                  <button onClick={() => deleteTome(tome.tomeId)} >delete</button> */}
+                </div>
+                <div className="detailsTome blockTomeDetails" id={`detailsTome${i}`}>
+                  <p>{tome.tome_sumary}</p>
+                </div>
               </div>
-              <div className="blockTomeDetails" id={`detailsTome${i}`}>
-                <p>{tome.tome_sumary}</p>
-              </div>
+              <MultyDotsButton buttons={["details", "trash"]} functions={{showDetails : showDetails, deleteTome : deleteTome}} idButton={i} tomeId={tome.tomeId}/>
             </div>
             )
         }
