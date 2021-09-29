@@ -6,7 +6,7 @@ import {
 
 import Button from './designComponent/Button';
 import './style/modaleAddSeries.css';
-import './style/basicsElements.css';
+import './style/sass/basicsElements.css';
 
 export default function ModaleSerie({manageModaleAdd}) {
    

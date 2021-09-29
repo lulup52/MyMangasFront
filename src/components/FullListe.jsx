@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import NavBar from './NavBar';
 import React, { useState, useEffect } from 'react';
-import './style/basicsElements.css';
+import './style/sass/basicsElements.css';
 import './style/fullListe.css';
 
 

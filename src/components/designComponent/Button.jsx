@@ -4,8 +4,8 @@ import {
     Link,
     useHistory, 
   } from 'react-router-dom';
-import '../style/basicsElements.css';
-import '../style/fullListe.css';
+  import '../style/sass/basicsElements.css';
+  import '../style/fullListe.css';
 
 export default function Home({adress, content, defaultClasse ,classeClicked, onclickFunction}) {
     let history = useHistory();

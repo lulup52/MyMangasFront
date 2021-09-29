@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import ButtonPerso from './designComponent/Button';
 
-import './style/basicsElements.css';
+import './style/sass/basicsElements.css';
 import './style/modaleSeries.css';
 
 export default function ModaleSerie({modaleData, manageModaleData, userId}) {

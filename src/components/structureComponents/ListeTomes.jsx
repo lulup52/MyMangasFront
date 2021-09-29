@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import ButtonPerso from '../designComponent/Button';
 import Axios from 'axios';
 import TreeDotsButton from '../designComponent/MultyDotsButton';
+
+import '../style/sass/basicsElements.css';
 // import Axios from 'axios';
 
 /* ------------------show the title and the serie picture ---------------------*/
@@ -52,10 +54,13 @@ export default function ListeTome({parentComponent,serieId, userId, parentFuncti
                 tomeListe.fullCollection !== undefined  ?
                 <div>{tomeListe.fullCollection}</div>
                 :
-                tomeListe.map(tome => {
-                
-                  return ( <button id={`tomeAddButton${tome.tomeId}`} key={`keyButton${tome.tomeId}`} onClick={() => addTomeToCollection(tome.tomeId)}>{`add ${tome.serie_title} ${tome.num_tome} ${tome.tomeId}`}</button>)
-                })
+
+                <div  className='tomeListe'>
+                  {tomeListe.map(tome => {
+                  
+                    return ( <button className='tomeAddButton' id={`tomeAddButton${tome.tomeId}`} key={`keyButton${tome.tomeId}`} onClick={() => addTomeToCollection(tome.tomeId)}>{`add ${tome.serie_title} ${tome.num_tome} ${tome.tomeId}`}</button>)
+                  })}
+                </div>
                   
               }
             </div>

@@ -2,7 +2,7 @@ import React /*, { useState, useEffect }*/ from 'react';
 // import Axios from 'axios';
 
 /* ------------------show the title and the serie picture ---------------------*/
-export default function BlockTome({serie, modalFunction}) {
+export default function BlockSerie({serie, modalFunction}) {
     
     const liste= () => {
         

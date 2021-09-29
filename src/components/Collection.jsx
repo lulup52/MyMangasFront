@@ -2,7 +2,7 @@ import Axios from 'axios';
 import NavBar from './NavBar';
 import React, { useState, useEffect } from 'react';
 import './style/collectionListe.css';
-import './style/basicsElements.css';
+import './style/sass/basicsElements.css';
 
 
 import ModaleCollection from './ModaleCollection'

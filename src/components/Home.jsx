@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './designComponent/Button';
 import './style/home.css';
-import './style/basicsElements.css';
+import './style/sass/basicsElements.css';
 
 export default function Home({changeUserId}) {
     
