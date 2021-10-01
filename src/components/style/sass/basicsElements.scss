@@ -70,6 +70,14 @@ h2 {
     margin-top: 1rem;
 }
 /*------------- buttons ----------*/
+
+.buttonExitAdd {
+    position: absolute;
+    top: 38px;
+    left: 0px;
+
+}
+
 .buttonHeightHolder {
     position: relative;
     top: -30px;
@@ -197,7 +205,10 @@ h2 {
 
 /*---------------- block et listes ----------------*/
 
-
+.modaleContainer .container{
+    width: 90%;
+    display: flex;
+}
 .blockManga, .blockPlayliste{
     display: flex;
     flex-direction: column;
@@ -229,22 +240,24 @@ h2 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 55vw;
-    &:last-child{
-        justify-content: flex-start;
+    margin-bottom: 1rem;
+    overflow-y: scroll;
+
+
     
-    }
 }
 
 
 .tomeAddButton {
     margin-bottom: .5rem;
+    width: 45%;
+
     &:last-child {
         margin-bottom: 0;
+        justify-content: flex-start;
+
     }
 }
-
-
 
 
 
@@ -258,7 +271,7 @@ h2 {
     height: 100%;
     width: 100vw;
     background: #FFFFFF;
-    outline: 5px solid #131200;
+    outline: 7px solid #131200;
     outline-offset: -5px;
     box-sizing: border-box;
     box-shadow: 0px 6px 4px #131200;

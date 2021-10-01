@@ -19,6 +19,7 @@ p {
           box-sizing: content-box;
   color: white;
   font-size: 4rem;
+  z-index: 1;
 }
 
 .treeDotsButtonContainer .buttonHolder {
@@ -85,7 +86,9 @@ p {
 .treeDotsButtonContainer:hover {
   -webkit-transition: 500ms;
   transition: 500ms;
-  width: 6rem;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  width: 4.5rem;
 }
 
 .treeDotsButtonContainer:hover .buttonHolder {

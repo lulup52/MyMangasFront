@@ -46,7 +46,7 @@ export default function ListeTome({parentComponent,serieId, userId, parentFuncti
     <>
      <div>
       
-     <ButtonPerso adress={'function'} content={modaleTomesListe? "x" : "add"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={showTomes}/>
+     <ButtonPerso adress={'function'} content={modaleTomesListe? "x" : "+"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={showTomes}/>
          
          {modaleTomesListe ? 
             <div>
@@ -58,14 +58,14 @@ export default function ListeTome({parentComponent,serieId, userId, parentFuncti
                 <div  className='tomeListe'>
                   {tomeListe.map(tome => {
                   
-                    return ( <button className='tomeAddButton' id={`tomeAddButton${tome.tomeId}`} key={`keyButton${tome.tomeId}`} onClick={() => addTomeToCollection(tome.tomeId)}>{`add ${tome.serie_title} ${tome.num_tome} ${tome.tomeId}`}</button>)
+                    return ( <button className='tomeAddButton' id={`tomeAddButton${tome.tomeId}`} key={`keyButton${tome.tomeId}`} onClick={() => addTomeToCollection(tome.tomeId)}>{`add ${tome.serie_title} ${tome.num_tome}.navBar`}</button>)
                   })}
                 </div>
                   
               }
             </div>
             : 
-             "close"
+            ""
         }
      </div>
     </>

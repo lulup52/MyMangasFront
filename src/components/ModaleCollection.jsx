@@ -5,6 +5,7 @@ import ListeTomes from './structureComponents/ListeTomes';
 import MultyDotsButton from './designComponent/MultyDotsButton';
 
 import './style/modaleSeries.css';
+import './style/sass/basicsElements.css';
 
 export default function ModaleCollection({modaleData, userId, parentFunction, parentComponent}) {
    
@@ -64,46 +65,62 @@ export default function ModaleCollection({modaleData, userId, parentFunction, pa
     }
 
     return (
-    <div className='modale'>
-      <ButtonPerso adress={'function'} content={"×"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={parentFunction} />
-       
-      <div className='detailsAndAddContainer'>
-        <div className='detaileContainer'>
-          <div className='modaleTitleCollection'>{modaleData.serie_title}</div>
-          <div className='modaleImageCollection'><img src={modaleData.ilustration} /></div>
-          <div className=''>{modaleData.author}</div>
+      <div className="container">
+        <div className="buttonExitAdd">
+          <ButtonPerso adress={'function'} content={"×"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} onclickFunction={parentFunction} />
         </div>
-        <div className='addContianer'>
-          <ListeTomes userId={userId} serieId={modaleData.serieId} parentFunction={buildListe} parentComponent={"modalCollection"}/>
-        </div>
-      </div>
+        <div className='modale'>
+          
+          <div className='detailsAndAddContainer'>
 
-      
+            <div className='detaileContainer'>
 
-      <div className='tomeCollectionListe'>
-        {
-          userTomesInCollection.map((tome, i) => 
-            <div key={`keyTome${i}`} className="tomeDetailsButtonContainer" >
-              <div className="tomeDetailsContainer">
-                <div className="blockTomeCollection" >
-                  <p>{tome.subtitle}</p>
-                  <p>{tome.num_tome}</p>
+              <p className='modaleTitleCollection'>{modaleData.serie_title}</p>
 
-                  {/* <button  onClick={() => showDetails(tome, i)}>details</button>
-                  <button onClick={() => deleteTome(tome.tomeId)} >delete</button> */}
+              <div className='imageAndText'>
+                <div className='modaleImageCollection'>
+                  <img src={modaleData.ilustration} />
                 </div>
-                <div className="detailsTome blockTomeDetails" id={`detailsTome${i}`}>
-                  <p>{tome.tome_sumary}</p>
+
+                <div className='modaleTextCollection'>
+                  <div className='modaleSumary'>{modaleData.sumary}</div>
+                  <p className='modaleAuthor'>{modaleData.author}</p>
                 </div>
               </div>
-              <MultyDotsButton buttons={["details", "trash"]} functions={{showDetails : showDetails, deleteTome : deleteTome}} idButton={i} tomeId={tome.tomeId}/>
+
             </div>
-            )
-        }
+            <div className='addContianer'>
+              <ListeTomes userId={userId} serieId={modaleData.serieId} parentFunction={buildListe} parentComponent={"modalCollection"}/>
+            </div>
+          </div>
+
+          
+
+          <div className='tomeCollectionListe'>
+            {
+              userTomesInCollection.map((tome, i) => 
+                <div key={`keyTome${i}`} className="tomeDetailsButtonContainer" >
+                  <div className="tomeDetailsContainer">
+                    <div className="blockTomeCollection" >
+                      <p>{tome.subtitle}</p>
+                      <p>{tome.num_tome}</p>
+
+                      {/* <button  onClick={() => showDetails(tome, i)}>details</button>
+                      <button onClick={() => deleteTome(tome.tomeId)} >delete</button> */}
+                    </div>
+                    <div className="detailsTome blockTomeDetails" id={`detailsTome${i}`}>
+                      <p>{tome.tome_sumary}</p>
+                    </div>
+                  </div>
+                  <MultyDotsButton buttons={["details", "trash"]} functions={{showDetails : showDetails, deleteTome : deleteTome}} idButton={i} tomeId={tome.tomeId}/>
+                </div>
+                )
+            }
+          </div>
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
 
 

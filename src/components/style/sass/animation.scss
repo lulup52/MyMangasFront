@@ -17,6 +17,8 @@ p {
     box-sizing: content-box;
     color: white;
     font-size: 4rem;
+    z-index: 1;
+    
 
 
     .buttonHolder {
@@ -78,7 +80,8 @@ p {
     }
     &:hover {
         transition: 500ms;
-        width: 6rem;
+        transform: rotate(360deg);
+        width: 4.5rem;
         .buttonHolder {
             transition: 700ms;
             height: 0;

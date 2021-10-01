@@ -4,12 +4,45 @@
     height: 90vh;
     width: 90vw;
     background: #fff;
-    overflow-y: scroll;
+    overflow-y: hidden;
     padding: 1rem;
 }
 
 .detailsAndAddContainer {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.detaileContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+
+    margin-bottom: 3rem;
+}
+
+
+
+.modaleTitleCollection {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.modaleTextCollection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 55%;
+}
+
+.addContianer {
+    width: 100%;
+
 }
 
 .exitButtonModale {
@@ -42,20 +75,40 @@
     width: 80%;
     height: 80%;
 }
-.modaleImage img, .modaleImageCollection img {
-    width: 100%;
+
+.modaleImageCollection {
+    height: 70%;
+    display:  flex;
+    flex-direction: column;
+}
+.modaleImageCollection img {
+
+    width: auto;
     height: 100%;
 }
 
-.modaleImageCollection {
-    width: 50%;
-    height: 50%;
+.imageAndText {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modaleSumary {
+    height: 25vh;
+    overflow: scroll;
+    margin-bottom: 2rem;
+}
+.modaleAuthor {
+    text-align: center;
 }
 
 .tomeCollectionListe, .tomeSerieListe {
     display:  flex;
     flex-wrap: wrap;
-    width: 90vw;
+    width: 100%;
+    height: 26vh;
+    overflow-y: scroll;
 }
 
 .tomeDetailsButtonContainer {
@@ -67,7 +120,7 @@
 }
 
 .tomeDetailsContainer {
-    width: 65vw;
+    width: 70vw;
 }
 
 .blockTome {
@@ -94,7 +147,7 @@
     justify-content: space-between;
     height: 10vw;
     font-size: 1rem;
-    border-radius: 10px;
+    border-radius: 50px;
     background-color: #fff;
     color: black;
     box-sizing: border-box;
