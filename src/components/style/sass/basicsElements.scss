@@ -1,3 +1,28 @@
+
+/*---------------------modale login-----------------------------------*/
+
+.modaleLoginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.602);
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.modaleLogin {
+    height: 60vh;
+    width: 60vw;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 50px;
+}
+
+/*--------------------------------------------------------*/
+
 .userIdTest {
     position: absolute;
     top: 0;
@@ -84,37 +109,8 @@ h2 {
     display: flex;
     flex-direction: column;
 }
-.clickableButton {
-    font-weight: bolder;
-    font-size: 1.5rem;
-    margin: 1rem;
-    width: fit-content;
-    padding: .5rem 2.5rem;
-    background: #FFFFFF;
-    box-sizing: border-box;
-    border-radius: 50px;
-    box-shadow: 0 8px 1px black;
-}
 
-
-.clickableButtonPressed {
-    transition-duration: 100ms;
-    
-    font-weight: bolder;
-    
-    font-size: 1.5rem;
-    margin: 1rem;
-    margin-bottom: .5rem;
-    width: fit-content;
-    padding: .6rem 2.5rem;
-    background: #FFFFFF;
-    box-sizing: border-box;
-    border-radius: 50px;
-    box-shadow: 0px 2px 1px 2px  black;
-
-}
-
-.backButton {
+.backButton, .clickableButton {
     position: relative;
     font-weight: bolder;
     font-size: 2rem;
@@ -128,7 +124,7 @@ h2 {
     border: solid 1px black;
 }
 
-.backButtonPressed {
+.backButtonPressed, .clickableButtonPressed {
     transition-duration: 100ms;
     top: 6px;
     position: relative;
@@ -142,8 +138,13 @@ h2 {
     border-radius: 50px;
     box-shadow: 0 1px 1px black;
     border: solid 1px black;
+
 }
 
+.clickableButton , .clickableButtonPressed {
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+}
 .rotate p{
     transform: rotate(45deg);
 }

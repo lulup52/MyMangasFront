@@ -44,9 +44,19 @@ export default function Home({adress, content, defaultClasse ,classeClicked, onc
   return (
         <div className='buttonHeightHolder'>
           <div>
-          <Link className={defaultClasse} to={`/${adress}`} id={`${adress}`} onClick={(e) => pressedButton(e)}>
+            {
+              content === "conection" ? 
+
+              <div className={defaultClasse} onClick={(e) => pressedButton(e)}>
+                yoyoyoyoyoy
+              </div>
+              :
+            <Link className={defaultClasse} to={`/${adress}`} id={`${adress}`} onClick={(e) => pressedButton(e)}>
               {content}
-          </Link>
+            </Link>
+
+            }
+          
           </div>
           
         </div>

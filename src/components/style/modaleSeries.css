@@ -34,9 +34,10 @@
 }
 
 .modaleTextCollection {
+    height: 32vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     width: 55%;
 }
 
@@ -95,9 +96,12 @@
     align-items: center;
 }
 .modaleSumary {
-    height: 25vh;
     overflow: scroll;
     margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
 }
 .modaleAuthor {
     text-align: center;
