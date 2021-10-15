@@ -11,7 +11,7 @@
           align-items: center;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.602);
+  background-color: rgba(0, 0, 0, 0.76);
   position: absolute;
   top: 0;
   z-index: 1;
@@ -23,6 +23,28 @@
   background-color: white;
   border: 5px solid black;
   border-radius: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.modaleLogin .backButton {
+  margin: 0;
+}
+
+.modaleComponent {
+  width: 80%;
+  margin: 1rem auto;
 }
 
 /*--------------------------------------------------------*/
@@ -124,7 +146,7 @@ h2 {
 /*------------- buttons ----------*/
 .buttonExitAdd {
   position: absolute;
-  top: 38px;
+  top: 12px;
   left: 0px;
 }
 

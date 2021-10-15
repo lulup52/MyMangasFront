@@ -27,11 +27,11 @@ export default function LoginModale({parentFunction}) {
             <div className='modaleLogin'>
                 <Button adress={'function'} onclickFunction={parentFunction} content={"x"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} />
                 
-                <label htmlFor="userName">userName :</label>
-                <input type="text" id="userName" name="userName" />
+                <label className='modaleComponent' htmlFor="userName">userName :</label>
+                <input className='modaleComponent' type="text" id="userName" name="userName" />
 
-                <label htmlFor="passWord">passWord :</label>
-                <input type="password" id="passWord" name="passWord" />
+                <label className='modaleComponent' htmlFor="passWord">passWord :</label>
+                <input className='modaleComponent' type="password" id="passWord" name="passWord" />
 
                 <Button adress={'function'} onclickFunction={conexion} content={"conexion"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} />
 
