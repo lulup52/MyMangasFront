@@ -1,14 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from './designComponent/Button';
 import LoginModale from './structureComponents/loginModale';
 import './style/home.css';
 import './style/sass/basicsElements.css';
 
 export default function Home({changeUserId}) {
+  
+  useEffect(() => {
+    if(authToken === '') {
+      setLoginModaleOpen(!loginModaleOpen)
+    }
+  },[])
+
+  const [authToken, setAuthToken] = useState('')
   const [loginModaleOpen, setLoginModaleOpen] = useState(false)
 
-  const manageLoginModale = () => {
-    setLoginModaleOpen(!loginModaleOpen)
+  const manageLoginModale = (send) => {
+      setLoginModaleOpen(!loginModaleOpen)
+  }
+
+  const authTokenSeter = (token) => {
+    setAuthToken(token)
   }
     return (
     <div className="menuHome">
@@ -30,7 +42,7 @@ export default function Home({changeUserId}) {
 
         {
           loginModaleOpen ?
-            <LoginModale parentFunction={manageLoginModale} />
+            <LoginModale parentFunction={manageLoginModale} authTokenSeter={authTokenSeter}/>
             :
             ""
         }

@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '../designComponent/Button';
 import '../style/sass/basicsElements.css';
 import Axios from 'axios';
 
-export default function LoginModale({parentFunction}) {
+export default function LoginModale({parentFunction, authTokenSeter}) {
+
+    useEffect(() => {
+        authTokenSeter('')
+        },[])
+
+
     const [userName, setUserName] = useState("")
     const [passWord, setPassWord] = useState("")
     
@@ -19,7 +25,8 @@ export default function LoginModale({parentFunction}) {
         setUserName(userN)
         setPassWord(passW) 
         console.log(`pass ${passW}, username ${userN }`)
-
+        authTokenSeter("tokenis" + userN)
+        parentFunction()
     }
 
     return (
