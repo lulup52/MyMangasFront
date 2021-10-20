@@ -3,30 +3,30 @@ import Button from '../designComponent/Button';
 import '../style/sass/basicsElements.css';
 import Axios from 'axios';
 
-export default function LoginModale({parentFunction, authTokenSeter}) {
+export default function LoginModale({parentFunction, authTokenSeter, oldTokenParent}) {
 
-    useEffect(() => {
-        authTokenSeter('')
-        },[])
+    
 
-
-    const [userName, setUserName] = useState("")
-    const [passWord, setPassWord] = useState("")
+    const [oldToken, setOldToken] = useState(oldTokenParent)
+    const [newToken, setNewToken] = useState("")
+    const [username, setUsername] = useState("")
+    const [mdp, setMdp] = useState("")
     
     const conexion = () =>{
+        // let userN = document.getElementById("username").value
+        // userN = userN.replace(/[^a-zA-Z0-9-]/g, '')
+        if (username !== "" && mdp !== "" ) {
+            let url = "http://localhost:8000/api/users/login"
 
-        Axios.get(``)
-        .then((response) => {''})
-        .then((response) => {''})
-
-        let userN = document.getElementById("userName").value
-        let passW = document.getElementById("passWord").value
-        userN = userN.replace(/[^a-zA-Z0-9-]/g, '')
-        setUserName(userN)
-        setPassWord(passW) 
-        console.log(`pass ${passW}, username ${userN }`)
-        authTokenSeter("tokenis" + userN)
-        parentFunction()
+            Axios.post(url, {
+                username,
+                mdp
+              })
+              .then((response) => console.log(response.data[0].token) )
+            //   .then((response) => authTokenSeter(newToken) )
+            
+            // parentFunction()
+        }
     }
 
     return (
@@ -34,11 +34,11 @@ export default function LoginModale({parentFunction, authTokenSeter}) {
             <div className='modaleLogin'>
                 <Button adress={'function'} onclickFunction={parentFunction} content={"x"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} />
                 
-                <label className='modaleComponent' htmlFor="userName">userName :</label>
-                <input className='modaleComponent' type="text" id="userName" name="userName" />
+                <label className='modaleComponent' htmlFor="username">username :</label>
+                <input className='modaleComponent' type="text" id="username" name="username" onChange={(e) =>setUsername(e.target.value)} />
 
-                <label className='modaleComponent' htmlFor="passWord">passWord :</label>
-                <input className='modaleComponent' type="password" id="passWord" name="passWord" />
+                <label className='modaleComponent' htmlFor="mdp">mdp :</label>
+                <input className='modaleComponent' type="password" id="mdp" name="mdp"  onChange={(e) =>setMdp(e.target.value)} />
 
                 <Button adress={'function'} onclickFunction={conexion} content={"conexion"} defaultClasse={"backButton"} classeClicked={"backButtonPressed"} />
 

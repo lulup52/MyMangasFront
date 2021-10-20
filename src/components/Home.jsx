@@ -42,7 +42,7 @@ export default function Home({changeUserId}) {
 
         {
           loginModaleOpen ?
-            <LoginModale parentFunction={manageLoginModale} authTokenSeter={authTokenSeter}/>
+            <LoginModale oldTokenParent={authToken} parentFunction={manageLoginModale} authTokenSeter={authTokenSeter}/>
             :
             ""
         }
