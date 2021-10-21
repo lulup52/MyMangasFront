@@ -17,7 +17,7 @@ export default function Collection({userId}) {
     const [modaleDataOn, setModaleDataOn] = useState(false);  
     const [modaleAddOn, setModaleAddOn] = useState(false);  
     const [modaleData, setModaleData] = useState({});  
-
+    console.log(userId)
     useEffect(() => {
       importDatas()
       },[userId])

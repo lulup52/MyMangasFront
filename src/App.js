@@ -13,11 +13,20 @@ import Home from './components/Home'
 function App() {
 
   const [userId, setUserId] = useState("1");
-    
+  const [logtoken, setLogtoken] = useState("11111")
+  
   
   const changeUserId = (id) => {
     setUserId(id)
   }
+  const withAuth = (Component) => {
+    console.log(logtoken)
+    if(logtoken != '') {
+      return Component
+    } else {
+      console.log('no token')
+    }
+  };
 
 
   return (
@@ -25,12 +34,15 @@ function App() {
   
     <div>
       <Router>
+
         <Route path="/full_liste">
           <FullListe userId={userId}/>
         </Route>
-        <Route path="/collection">
-          <Collection userId={userId} />
-        </Route>
+
+         <Route path="/collection">
+          {logtoken != "" ? <Collection userId={userId}/> : console.log("bubu") }
+        </Route> 
+
         <Route path="/lecture">
           <Lecture userId={userId} />
         </Route>
